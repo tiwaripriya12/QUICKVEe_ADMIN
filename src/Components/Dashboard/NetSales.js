@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BarChart1 from '../Dashboard/BarChart';
 
 const NetSales = () => {
   const [selectedOption, setSelectedOption] = useState('Days');
@@ -55,7 +56,10 @@ const NetSales = () => {
               )}
             </div>
           </div>
+         
+  
         </div>
+        <BarChart1 /> 
       </div>
 
     </>

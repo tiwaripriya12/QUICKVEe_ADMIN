@@ -8,7 +8,7 @@ const Main = () => {
     <>
     <Routes>
       <Route exact path="/" element={  <Home  /> } />
-        <Route exact path="/forgotpass" element={<MainAuthentication visible={"forgotpass"} />} />
+        <Route exact path="/dashbaord" element={<MainAuthentication visible={"forgotpass"} />} />
        
         
       </Routes>
