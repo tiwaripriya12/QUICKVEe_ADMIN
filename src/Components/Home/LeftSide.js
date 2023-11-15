@@ -1,14 +1,18 @@
 import React from 'react'
-import Welcome from '../Dashboard/Welcome'
-import NetSales from './../Dashboard/NetSales';
+import DashboardMain from '../Dashboard/DashboardMain'
+import MainOrder from './../Orders/MainOrder';
 
 
-const LeftSide = () => {
+const LeftSide = ({visible}) => {
   return (
   <>
-  
-  <Welcome />
-  <NetSales />
+  <div className='width-[80%]'>
+   
+    { visible ==="dashboard" &&  <DashboardMain />}
+    { visible ==="order" &&  <MainOrder />}
+ 
+  </div>
+
 
   </>
   )

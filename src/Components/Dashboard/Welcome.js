@@ -7,6 +7,18 @@ const Welcome = () => {
 
   return (
     <>
+     <div className=''>
+        <div className='relative'>
+        <h1 className='text-xl text-black mx-9 mt-5 font-sans font-bold top-111 left-274 w-198 h-20 leading-28'>
+        Welcome Malik Saleh
+        </h1>
+   
+      </div>
+
+      
+    
+        </div>
+  
       <div className="mx-4">
         <div className="box-content h-32 w-70 p-4 border-4 border-white bg-white shadow-2xl rounded-2xl opacity-100">
           <table className="w-full">

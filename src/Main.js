@@ -1,22 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Route, Routes  , Navigate} from "react-router-dom";
-
+import MainHome from './Components/Home/MainHome';
+import Home from './Components/Home/Home';
 
 const Main = () => {
   return (
-    <>
-    <Routes>
-      <Route exact path="/" element={  <Home  /> } />
-        <Route exact path="/dashbaord" element={<MainAuthentication visible={"forgotpass"} />} />
+      <Routes>
        
-        
+        <Route path="/" element={<MainHome />} />
+        <Route path="/dashboard" element={<MainHome visible={"dashboard"} />} />
+        <Route path="/order" element={<MainHome visible={"order"} />} />
       </Routes>
-    
-    
-    
-    </>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

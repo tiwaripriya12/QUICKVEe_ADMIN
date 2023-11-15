@@ -10,3 +10,27 @@
   font-size: 40px;
 }
 
+
+
+
+@font-face {
+  font-family: adminbold;
+   src:url(./Assests/Fonts/circular-bold.TTF)
+}
+
+@font-face {
+  font-family: adminmedium;
+  src: url(./Assests/Fonts/circulur-medium.TTF)
+}
+
+@font-face {
+  font-family: adminblack;
+  src: url(./Assests/Fonts/circulur-std-black.TTF);
+}
+
+@font-face {
+  font-family: adminstdbook;
+  src: url(./Assests/Fonts/circulur-std-book.TTF);
+}
+
+

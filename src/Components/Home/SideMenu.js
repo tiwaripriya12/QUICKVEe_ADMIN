@@ -1,16 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { FaHome, FaShoppingCart, FaTags, FaBox, FaSlidersH, FaShoppingBag, FaDownload, FaTruck, FaClock, FaChevronDown } from 'react-icons/fa';
+import { FaChevronCircleDown, FaTachometerAlt, FaRegSun } from "react-icons/fa";
 
-import LeftSide from './LeftSide';
+import { Link } from 'react-router-dom';
+
+import { ReactComponent as DashboardIcon } from '../../Assests/Dashboard/dashboard.svg';
+// import { ReactComponent as ShopingCart } from '../../Assests/Dashboard/orders.svg';
+// import { ReactComponent as CateIcon } from '../../Assests/Dashboard/category.svg';
+// import { ReactComponent as ProductIcon } from '../../Assests/Dashboard/product.svg';
+// import { ReactComponent as AttributesIcon } from '../../Assests/Dashboard/attributes.svg';
+// import { ReactComponent as PurchaseIcon } from '../../Assests/Dashboard/product.svg';
+// import { ReactComponent as ProductIcon } from '../../Assests/Dashboard/product.svg';
+// import { ReactComponent as ProductIcon } from '../../Assests/Dashboard/product.svg';
+// import { ReactComponent as ProductIcon } from '../../Assests/Dashboard/product.svg';
+
 
 
 
 const SideMenu = () => {
   return (
     <>
-      <div className='flex h-full'>
+      <div className='flex'>
         {/* Left Side Menu */}
-        <div className='flex-1 bg-black text-white p-4 w-1/5'>
+        <div className='flex-1 bg-black text-white p-4 w-[40%] h-[120vh]'>
+          <div className=''>
           {/* Add your left side menu content here */}
           {menuItems.map((item) => (
             <div key={item.id} className='mb-4 ml-16 text-base'>
@@ -19,26 +32,16 @@ const SideMenu = () => {
               ) : (
                 <div className='flex items-center'>
                   {item.icon}
-                  <p className='ml-2 menu-item text-gray-500'>{item.text}</p> {/* Apply text-gray-500 class for the specified color */}
+                  <Link className='ml-2 menu-item text-[16px] text-gray-500 adminmedium font-semibold' to={item.link}>{item.text}</Link> {/* Apply text-gray-500 class for the specified color */}
                 </div>
               )}
             </div>
           ))}
         </div>
+        </div>
 
         {/* Right Dashboard Menu */}
-        <div className='w-4/5 h-full'>
-        <div className='relative'>
-        <h1 className='text-xl text-black mx-9 mt-5 font-sans font-bold top-111 left-274 w-198 h-20 leading-28'>
-          Welcome to the Dashboard
-        </h1>
-   
-      </div>
-
-        <LeftSide />
-      
-    
-        </div>
+       
       </div>
     </>
   );
@@ -75,18 +78,47 @@ const DropdownMenuItem = ({ item }) => {
 };
 // Define menu items with icons and text
 const menuItems = [
-  { id: 1, icon: <FaHome />, text: 'Dashboard' },
-  { id: 2, icon: <FaShoppingCart />, text: 'Order' },
-  { id: 3, icon: <FaTags />, text: 'Category' },
-  { id: 4, icon: <FaBox />, text: 'Product' },
-  { id: 5, icon: <FaSlidersH />, text: 'Attributes' },
-  { id: 6, icon: <FaShoppingBag />, text: 'Purchase' },
-  { id: 7, icon: <FaDownload />, text: 'Import Data' },
-  { id: 8, icon: <FaDownload />, text: 'Coupons' },
-  { id: 9, icon: <FaTruck />, text: 'Vendors' },
-  { id: 10, icon: <FaClock />, text: 'Timesheet' },
-  { id: 11, icon: <FaShoppingBag />, text: 'Store Settings', dropdownItems: [{ id: 61, text: 'Submenu 1' }, { id: 62, text: 'Submenu 2' }] },
-  { id: 12, icon: <FaShoppingBag />, text: 'Reporting', dropdownItems: [{ id: 61, text: 'Submenu 1' }, { id: 62, text: 'Submenu 2' }] },
+  {
+    id: 1,
+    icon: <DashboardIcon className="h-6 w-6" />, // Use the imported SVG component here
+    text: 'Dashboard',
+    link: '/dashboard',
+  },
+  {
+    id: 2,
+    icon: <FaShoppingCart className="h-6 w-6 text-white" />, // Use the imported SVG component here
+    text: 'Order',
+    link: '/order',
+  },
+  { id: 3, icon: <FaShoppingCart className='h-6 w-6' />, text: 'Category', link: '/category' },
+  { id: 4, icon: <FaShoppingCart className = 'h-6 w-6' />, text: 'Product', link: '/product' },
+  { id: 5, icon: <FaShoppingCart className='h-6 w-6' />, text: 'Attributes', link: '/attributes' },
+  { id: 6, icon: <FaShoppingCart className='h-6 w-6' />, text: 'Purchase', link: '/purchase' },
+  { id: 7, icon: <FaDownload />, text: 'Import Data', link: '/import-data' },
+  { id: 8, icon: <FaDownload />, text: 'Coupons', link: '/coupons' },
+  { id: 9, icon: <FaTruck />, text: 'Vendors', link: '/vendors' },
+  { id: 10, icon: <FaClock />, text: 'Timesheet', link: '/timesheet' },
+
+  {
+    id: 11,
+    icon: <FaShoppingBag />,
+    text: 'Store Settings',
+    className: 'flex items-center gap-2',
+    dropdownItems: [
+      { id: 61, text: 'Submenu 1', link: '/store-settings/submenu1' },
+      { id: 62, text: 'Submenu 2', link: '/store-settings/submenu2' }
+    ]
+  },
+  {
+    id: 12,
+    icon: <FaShoppingBag />,
+    text: 'Reporting',
+    className: 'flex items-center gap-2',
+    dropdownItems: [
+      { id: 61, text: 'Submenu 1', link: '/reporting/submenu1' },
+      { id: 62, text: 'Submenu 2', link: '/reporting/submenu2' }
+    ]
+  }
 ];
 
 export default SideMenu;
