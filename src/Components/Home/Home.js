@@ -5,15 +5,21 @@ import { BiMenu, BiChevronDown, BiDownArrowAlt, BiShow, BiSync } from 'react-ico
 
 const Home = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+    setDropdownOpen(false); // Close dropdown when menu is toggled
+  };
+
   return (
     <>
       <div className='flex items-center m-2 p-2 bg-white'>
-        <BiMenu className='text-black text-2xl' />
+        <BiMenu className='text-black text-2xl' onClick={toggleMenu} />
         <img src={Quick} alt="Logo" className='w-24 ml-6' />
 
         {/* Dropdown Button */}
@@ -29,31 +35,29 @@ const Home = () => {
         {isDropdownOpen && (
           <div className='mt-2 bg-white'>
             {/* Dropdown items go here */}
-            {/* <p className='p-2 hover:bg-gray-200 cursor-pointer'>Item 1</p>
-            <p className='p-2 hover:bg-gray-200 cursor-pointer'>Item 2</p>
-            <p className='p-2 hover:bg-gray-200 cursor-pointer'>Item 3</p> */}
           </div>
         )}
 
         {/* Three Menu Items on the Right */}
-        
-      <div className='ml-auto font-circular flex items-center text-base text-black'>
-  <BiDownArrowAlt className='ml-2' />
-  <p className='cursor-pointer ml-2 mr-4 font-semibold'>Download App</p>
-</div>
+        {isMenuOpen && (
+          <>
+            <div className='ml-auto font-circular flex items-center text-base text-black'>
+              <BiDownArrowAlt className='ml-2' />
+              <p className='cursor-pointer ml-2 mr-4 font-semibold'>Download App</p>
+            </div>
 
-<div className='ml-8 font-circular flex items-center text-base text-black'>
-  <BiShow className='ml-2' />
-  <p className='cursor-pointer ml-2 mr-4 font-semibold'>Online Store</p>
-  <BiSync className='ml-2' />
-  <p className='cursor-pointer ml-2 font-semibold'>Sync Data</p>
-</div>
-
-</div>
-<div className='border-t-[3px] border-b-2 border-black bg-black'>
-  {/* Your content goes here */}
-</div>
-
+            <div className='ml-8 font-circular flex items-center text-base text-black'>
+              <BiShow className='ml-2' />
+              <p className='cursor-pointer ml-2 mr-4 font-semibold'>Online Store</p>
+              <BiSync className='ml-2' />
+              <p className='cursor-pointer ml-2 font-semibold'>Sync Data</p>
+            </div>
+          </>
+        )}
+      </div>
+      <div className='border-t-[3px] border-b-2 border-black bg-black'>
+        {/* Your content goes here */}
+      </div>
     </>
   );
 };
