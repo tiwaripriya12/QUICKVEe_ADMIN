@@ -22,8 +22,8 @@ const SellItems = () => {
   ];
 
   return (
-    <div className="mx-4 py-7 h-[100]">
-      <div className="box-content h-[100] w-[50] p-4 border-4 border-white bg-white shadow-2xl rounded-2xl opacity-100 flex justify-between items-center relative">
+    <div className="mx-4 py-7 h-[100] my-9">
+      <div className="box-content h-[100] w-[50] p-4 border-4 border-white bg-white  rounded-2xl opacity-100 flex justify-between items-center relative"  style={{ boxShadow: "0px 3px 6px #0000001F" }}>
         <div className="container mx-auto">
           <div className="grid grid-cols-2 gap-4">
             <div className="">

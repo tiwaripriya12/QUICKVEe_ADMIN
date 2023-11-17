@@ -23,8 +23,8 @@ const NetSales = () => {
 
   return (
     <>
-      <div className="mx-4">
-        <div className="box-content h-[100] w-full p-4 border-4 border-white bg-white shadow-2xl rounded-2xl opacity-100 flex justify-between items-center relative">
+      <div className="mx-4 my-9">
+        <div className="box-content h-[100] w-full p-4 border-4 border-white bg-white rounded-2xl opacity-100 flex justify-between items-center relative"  style={{ boxShadow: "0px 3px 6px #0000001F" }}>
          
           
         <BarCharts />

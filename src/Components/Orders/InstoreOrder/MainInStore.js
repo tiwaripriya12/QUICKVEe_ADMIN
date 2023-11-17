@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import FilterEmp from "./FilterEmp";
 import DateRange from "./DateRange";
+import ContentList from "./ContentList";
+import TableViewData from "./TableViewData";
 
 const MainInStore = () => {
   const [activeTab, setActiveTab] = useState("online"); // State to track active tab
@@ -53,6 +55,15 @@ const MainInStore = () => {
 
         <div className="w-70 my-12">
           <DateRange />
+        </div>
+
+
+        <div className="w-70 my-12">
+         <ContentList />
+        </div>
+
+        <div className="w-70 my-12">
+        <TableViewData />
         </div>
        
               </>
