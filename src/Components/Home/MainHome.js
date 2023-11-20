@@ -8,10 +8,10 @@ const MainHome = ({ visible }) => {
     <div className="home-container" style={{ overflow: 'hidden' }}>
       <Home />
       <div className="flex">
-      <div className="w-1/5">
-  <SideMenu />
-</div>
-        <div className="w-4/5 my-8 mx-16">
+      <div className="w-1/6">
+        <SideMenu />
+     </div>
+        <div className="w-5/6 bg-[#F9F9F9] mx-4 my-4">
          <LeftSide visible={visible} /> 
         </div>
       </div>

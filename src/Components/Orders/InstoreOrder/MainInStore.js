@@ -53,18 +53,6 @@ const MainInStore = () => {
           <FilterEmp />
         </div>
 
-        <div className="w-70 my-12">
-          <DateRange />
-        </div>
-
-
-        <div className="w-70 my-12">
-         <ContentList />
-        </div>
-
-        <div className="w-70 my-12">
-        <TableViewData />
-        </div>
        
               </>
             )}

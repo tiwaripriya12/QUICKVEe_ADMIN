@@ -1,8 +1,21 @@
 import React from 'react'
 
+import AddCategory from './AddCategory'
+import CategoryList from './CategoryList'
+
 const MainProduct = () => {
   return (
-    <div>MainProduct</div>
+    <>
+    <div className=''>
+<CategoryList />
+      
+    </div>
+    <div className=''>
+      <AddCategory />
+    </div>
+
+    
+    </>
   )
 }
 

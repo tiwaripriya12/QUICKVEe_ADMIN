@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
 import { FaChevronDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import DashboardIcon from '../../Assests/Dashboard/dashboard.svg';
@@ -17,31 +18,45 @@ import ReportIcon from '../../Assests/Dashboard/reporting.svg';
 
 
 
+
 const SideMenu = () => {
 
- 
+  const [clickedItem, setClickedItem] = useState(null);
+
+  const handleItemClick = (id) => {
+    setClickedItem((prevId) => (prevId === id ? null : id));
+  };
 
   return (
     <>
-     <div className="flex">
+   <div className= 'fixed top-20 left-0 w-64'>
         {/* Left Side Menu */}
         <div className='flex-1 bg-black text-white p-4'>
-          <div className=''>
-          {/* Add your left side menu content here */}
-          {menuItems.map((item) => (
-            <div key={item.id} className='mb-4  text-base'>
-              {item.dropdownItems ? (
-                <DropdownMenuItem item={item} />
-              ) : (
-                <div className='flex items-center'>
-                  {item.icon}
-                  <Link className='ml-2 menu-item text-[16px] text-gray-400 adminmedium font-semibold' to={item.link}>{item.text}</Link> {/* Apply text-gray-400 class for the specified color */}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-        </div>
+      <div className=''>
+        {menuItems.map((item) => (
+          <div key={item.id} className='mb-4 text-base'>
+            {item.dropdownItems ? (
+              <DropdownMenuItem item={item} />
+            ) : (
+              <div
+                className={`flex items-center ${
+                  clickedItem === item.id ? 'text-[#FFC400]' : 'text-gray-400 hover-text-yellow'
+                }`}
+              >
+                {item.icon}
+                <Link
+                  onClick={() => handleItemClick(item.id)}
+                  className='ml-2 menu-item text-[16px] Admin_std'
+                  to={item.link}
+                >
+                  {item.text}
+                </Link>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
 
         {/* Right Dashboard Menu */}
        
@@ -93,7 +108,7 @@ const menuItems = [
   },
   {
     id: 2,
-    icon: <img src={ShoppingCartIcon} alt="Order" className="h-6 w-6 text-white mt-4 mb-4" />,
+    icon: <img src={ShoppingCartIcon} alt="Order" className="h-6 w-6 mt-4 mb-4" />,
     text: 'Order',
     link: '/order',
   },

@@ -33,4 +33,33 @@
   src: url(./Assests/Fonts/circulur-std-book.TTF);
 }
 
+.Admin_bold{
+  font-family: adminbold !important;
+}
+
+.Admin_black {
+  font-family: adminblack  !important;
+}
+
+.admin_medium{
+  font-family: adminmedium !important;
+}
+
+.Admin_std{
+  font-family:  adminstdbook !important;
+}
+
+.sales{
+  font-weight: normal !important;
+}
+
+/* In your CSS file or within your Tailwind configuration */
+.hover-text-yellow {
+  transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+.hover-text-yellow:hover {
+  color: #FFC400; /* Yellow color when hovered */
+}
+
 
