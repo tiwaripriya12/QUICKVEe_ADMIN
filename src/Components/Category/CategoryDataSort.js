@@ -101,7 +101,6 @@ const CategoryDataSort = ({ isOpen, onClose }) => {
           </div>
         </div>
 
-        <div className="p-4 mx-0">
           <table className="w-full">
             <thead>
               <tr className="bg-black text-[white] adminstdbook">
@@ -159,7 +158,7 @@ const CategoryDataSort = ({ isOpen, onClose }) => {
               ))}
             </tbody>
           </table>
-        </div>
+      
       </div>
     </div>
 
