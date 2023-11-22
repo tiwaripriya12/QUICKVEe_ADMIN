@@ -1,6 +1,7 @@
 import React from "react";
 import { BsDot } from 'react-icons/bs';
 
+
 const ContentList = () => {
   return (
     <div className="mx-[-2rem] my-7">

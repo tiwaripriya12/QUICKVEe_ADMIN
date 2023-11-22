@@ -7,6 +7,10 @@ const MainOrder = () => {
 <MainInStore />
 
 
+
+
+
+
    </>
   )
 }

@@ -1,25 +1,42 @@
 import { FaAngleLeft } from "react-icons/fa";
 import React from "react";
+import SideMenu from "../Home/SideMenu";
 
 const AddCategory = ({ onFilterChange, handlePhotoChange }) => {
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
-    // Pass the input value to the parent component for filtering
+
     onFilterChange(inputValue);
   };
 
-
   const handleAdd = () => {
-    // Logic for the 'Add' button
-    console.log('Add button clicked');
+    console.log("Add button clicked");
   };
 
-  const handleCancel = () => {
-    // Logic for the 'Cancel' button
-    console.log('Cancel button clicked');
-  };
+
+
+  // const [formData, setFormData] = useState({
+  
+
+  // const handleAdd = () => {
+   
+  // setFormData({ ...formData, newField: 'newValue' });
+  // };
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  
+  //   axios.post('/submit-url', formData)
+  //     .then(response => {
+       
+  //     })
+  //     .catch(error => {
+        
+  //     });
+  // };
   return (
     <div>
+   
       <div className="mx-2 mt-2">
         <div
           className="box-content h-[100] p-2 border-4 border-white bg-white rounded-2xl opacity-100 relative "
@@ -34,8 +51,7 @@ const AddCategory = ({ onFilterChange, handlePhotoChange }) => {
               </div>
             </div>
           </div>
-          <div className="mt-2 bg-[#000] border-b-4 w-2"></div>
-
+          <div class="mt-2 bg-[#000] border-b-2 w-full mb-4"></div>
           {/* Input fields */}
           <div className="">
             <div className="text-[14px] text-[#818181] Admin_std mb-5">
@@ -45,8 +61,8 @@ const AddCategory = ({ onFilterChange, handlePhotoChange }) => {
             <div className="w-full">
               <input
                 type="text"
-                placeholder="All Employee"
-                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-indigo-500"
+                placeholder=""
+                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-gray-500"
                 onChange={handleInputChange}
               />
             </div>
@@ -59,44 +75,46 @@ const AddCategory = ({ onFilterChange, handlePhotoChange }) => {
 
             <div className="w-full">
               <textarea
-                placeholder="Description"
-                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-indigo-500 h-40"
+                placeholder=""
+                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-gray-500 h-40"
                 onChange={handleInputChange}
               />
             </div>
           </div>
 
-          <div className="">
-            <div className="text-[14px] text-[#818181] Admin_std mb-1">
-              Upload Photo
+          <div className="mt-2">
+            <div className="text-[14px] text-[#818181] Admin_std mb-5">
+            
             </div>
             <div className="w-full">
               <input
                 type="file"
                 accept="image/*"
-                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-indigo-500 h-64 bg-[#F9F9F9] opacity-100"
+                className="w-full border-2 border-dashed rounded px-4 py-2 focus:outline-none focus:border-gray-500 h-64 bg-[#F9F9F9] opacity-100"
                 onChange={handlePhotoChange}
               />
             </div>
           </div>
-          <div className="flex mr-auto mb-3">
-            <button
-              onClick={handleAdd}
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-            >
-              Add
-            </button>
-            <button
-              onClick={handleCancel}
-              className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded"
-            >
-              Cancel
-            </button>
-          </div>
+          <div className="flex ml-auto mt-10 justify-end">
+        <button
+          type="button"
+          onClick={handleAdd}
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-8 rounded mr-2"
+        >
+          Add
+        </button>
+        <button
+          type="submit"
+          className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded ml-2"
+        >
+          Cancel
+        </button>
+      </div>
+
         </div>
       </div>
     </div>
   );
 };
 
-export default AddCategory;
+export default AddCategory
