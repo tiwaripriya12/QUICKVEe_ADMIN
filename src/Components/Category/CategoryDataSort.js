@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-//import { v4 as uuid } from 'uuid';
+import CrossIcon from "../../Assests/Dashboard/cross.svg";
 import DeleteIcon from "../../Assests/Dashboard/sdfdf.svg";
 
 const CategoryDataSort = ({ isOpen, onClose }) => {
@@ -64,42 +63,49 @@ const CategoryDataSort = ({ isOpen, onClose }) => {
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState("");
 
-  const openModal = () => {
+  const openModal = (content) => {
     setIsModalOpen(true);
+    setModalContent(content);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setModalContent("");
+  };
+
+  const handleClick = () => {
+    console.log('Button clicked!');
   };
 
   return (
-    <div className="mx-2 mt-2">
-      <div
-        className="box-content h-[100] p-2 border-4 border-white bg-white rounded-2xl opacity-100 relative"
-        style={{
-          boxShadow: "0px 3px 6px #0000001F",
-          overflowX: "auto",
-          whiteSpace: "nowrap",
-        }}
-      >
-        <div>
-          <div className="flex justify-between gap-2 mx-6 my-6">
-            <div className="text-[18px] Admin_std leading-0 text-black admin_medium font-semibold opacity-100">
-              Category
-            </div>
-            <div>
-              <Link
-                to="/addCategory"
-                className="text-[18px] Admin_std leading-0 text-blue-500 admin_medium font-semibold opacity-100"
-              >
-                Add Category
-                <span className="text-[18px] text-blue-500"> + </span>
-                
-              </Link>
+    <>
+      <div className="mx-2 my-7">
+        <div
+          className="box-content h-[100] p-2 border-4 border-white bg-white rounded-2xl opacity-100 relative mx-8 my-9"
+          style={{
+            boxShadow: "0px 3px 6px #0000001F",
+            overflowX: "auto",
+            whiteSpace: "nowrap",
+          }}
+        >
+          <div>
+            <div className="flex justify-between gap-2 mx-6 my-6">
+              <div className="text-[18px] Admin_std leading-0 text-black admin_medium font-semibold opacity-100">
+                Category
+              </div>
+              <div>
+                <Link
+                  to="/addCategory"
+                  className="text-[18px] Admin_std leading-0 text-blue-500 admin_medium font-semibold opacity-100"
+                >
+                  Add Category
+                  <span className="text-[18px] text-blue-500"> + </span>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
 
           <table className="w-full">
             <thead>
@@ -120,7 +126,14 @@ const CategoryDataSort = ({ isOpen, onClose }) => {
                 >
                   <td className="p-4">{item.id}</td>
                   <td className="p-4">{item.title}</td>
-                  <td className="p-4 text-[#0A64F9]">{item.items}</td>
+                  <td className="p-4">
+                    <button
+                      className="text-[#0A64F9]"
+                      onClick={() => openModal(item.items)}
+                    >
+                      View Items
+                    </button>
+                  </td>
                   <td className="p-4">
                     <div className="flex items-center">
                       <input
@@ -150,7 +163,7 @@ const CategoryDataSort = ({ isOpen, onClose }) => {
                       <img
                         src={DeleteIcon}
                         alt="delete"
-                        className="h-6 w-6 mt-4 mb-4"
+                        className="h-6 w-6 mt-4 mb-4 text-2xl"
                       />
                     </button>
                   </td>
@@ -158,11 +171,81 @@ const CategoryDataSort = ({ isOpen, onClose }) => {
               ))}
             </tbody>
           </table>
-      
+        </div>
       </div>
-    </div>
 
-    
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 overflow-auto bg-gray-500 bg-opacity-75 flex items-center justify-center">
+          <div className="absolute left-1/6 w-2/3 h-2/3 bg-white rounded-lg shadow-md p-6">
+            <div className="flex">
+              <div className="text-[18px] leading-3 ">Electronics</div>
+              <div className="flex ml-auto my-4">
+                <div className="flex items-center space-x-4">
+                  <select
+                    className="border rounded px-2 py-1 mr-7 bg-white border-[#9E9E9E] text-[#9E9E9E]"
+                  >
+                    <option value="day">Recently Added</option>
+                    <option value="month">Closed</option>
+                    <option value="time">Open</option>
+                  </select>
+                </div>
+                <img
+                  src={CrossIcon}
+                  alt="icon"
+                  className="ml-auto mb-4"
+                  onClick={closeModal}
+                />
+              </div>
+            </div>
+
+            <div class="mt-2 bg-[#000] border-b-2 w-full mb-4"></div>
+
+            <button className="px-4 py-2 bg-white border text-[16px] text-black opacity-100 Admin_bold leading-0 rounded-md mx-4 my-2">
+              Cameras & Photography
+            </button>
+
+            <button className="px-4 py-2 bg-white border text-[16px] text-black opacity-100 Admin_bold leading-0 rounded-md">
+              Home Audio
+            </button>
+
+            <button
+              className="px-4 py-2 bg-white border text-[16px] text-black opacity-100 Admin_bold leading-0 rounded-md mx-4 my-2"
+              onClick={handleClick}
+            >
+              Home Theater, TV & Video
+            </button>
+            
+            <button
+              className="px-4 py-2 bg-white border text-[16px] text-black opacity-100 Admin_bold leading-0 rounded-md mx-4 my-2"
+              onClick={handleClick}
+            >
+              Home Theater, TV & Video
+            </button>
+            <button className="px-4 py-2 bg-white border text-[16px] text-black opacity-100 Admin_bold leading-0 rounded-md">
+              Home Audio
+            </button>
+
+
+
+            <button className="px-4 py-2 bg-white border text-[16px] text-black opacity-100 Admin_bold leading-0 rounded-md mx-4 my-2">
+              Cameras & Photography
+            </button>
+
+
+            {/* Add more buttons as needed */}
+
+            <div class="mt-2 bg-[#000] border-b-2 w-full mb-4"></div>
+
+            <button
+              className="px-8 py-2 bg-blue-500 rounded-md text-white ml-auto"
+              onClick={closeModal}
+            >
+              ok
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

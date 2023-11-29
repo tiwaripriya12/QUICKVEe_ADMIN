@@ -1,7 +1,7 @@
 import React from 'react'
 import DashboardMain from '../Dashboard/DashboardMain'
 import MainOrder from './../Orders/MainOrder';
-import MainProduct from '../Category/MainCategory';
+//import MainProduct from '../Category/MainCategory';
 import MainPurchase from '../PurchaseOrders/MainPurchase';
 import MainAttributes from '../Attributes/MainAttributes';
 import MainCategory from '../Category/MainCategory';
@@ -16,8 +16,8 @@ import MainProducts from '../Products/MainProducts';
 const LeftSide = ({visible}) => {
   return (
   <>
+  <div className='w-full'>
   <div className=''>
-  <div className='bg-[#F9F9F9]'>
    
     { visible ==="dashboard" &&  <DashboardMain />}
     { visible ==="order" &&  <MainOrder />}

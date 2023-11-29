@@ -21,54 +21,54 @@ const Welcome = () => {
 
       <div className="mx-4">
         <div
-          className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100"
+          className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
           style={{ boxShadow: "0px 3px 6px #0000001F" }}
         >
           <table className="w-full">
             <thead>
               <tr>
                 <th className="">
-                    <div className="text-gray-700 font-normal text-base  text-[16px] Admin_std">Gross salse</div>
-                <div className="text-black text-[33px] font-normal  Admin_std mt-1 mb-1">462.00</div>
-                <div className="text-green-400 text-[12px]  Admin_std  mt-1 mb-1">+21.00%</div>
+                  <div className="text-gray-700 font-normal text-base  text-[16px] Admin_std">Gross salse</div>
+                  <div className="text-black text-[33px] font-normal  Admin_std mt-1 mb-1">462.00</div>
+                  <div className="text-green-400 text-[12px]  Admin_std  mt-1 mb-1">+21.00%</div>
                 </th>
                 <div className="mt-5 text-[50px]">-</div>
                 <th>
                   <div className="text-gray-700 font-normal text-base  text-[16px] Admin_std">Return</div>
-                <div className="text-black text-[33px] font-normal  Admin_std  mt-1 mb-1">462.00</div>
-                <div className="text-green-400 text-[12px]  mt-1 mb-1 Admin_std">+21.00%</div>
+                  <div className="text-black text-[33px] font-normal  Admin_std  mt-1 mb-1">462.00</div>
+                  <div className="text-green-400 text-[12px]  mt-1 mb-1 Admin_std">+21.00%</div>
                 </th>
                 <div className="mt-5 text-[50px]">-</div>
-                <th>  
+                <th>
                   <div className="text-gray-700 font-normal text-base  text-[16px] Admin_std">Discount</div>
-                <div className="text-black text-[33px] font-normal Admin_std mt-1 mb-1">462.00</div>
-                <div className="text-green-400 text-[12px]  Admin_std  mt-1 mb-1">+21.00%</div>
+                  <div className="text-black text-[33px] font-normal Admin_std mt-1 mb-1">462.00</div>
+                  <div className="text-green-400 text-[12px]  Admin_std  mt-1 mb-1">+21.00%</div>
                 </th>
                 <div className="mt-5 text-[50px]">=</div>
                 <th>
                   <div className="text-gray-700 font-normal text-base  text-[16px] Admin_std">Net Sales</div>
-                <div className="text-black text-[33px] font-normal  Admin_std  mt-1 mb-1">462.00</div>
-                <div className="text-green-400 text-[12px]  Admin_std  mt-1 mb-1">+21.00%</div>
+                  <div className="text-black text-[33px] font-normal  Admin_std  mt-1 mb-1">462.00</div>
+                  <div className="text-green-400 text-[12px]  Admin_std  mt-1 mb-1">+21.00%</div>
                 </th>
-              
+
                 <th>
                   <div className="text-gray-700 font-normal text-base  text-[16px] Admin_std">Sales Tax</div>
-                <div className="text-black text-[33px] font-normal  Admin_std  mt-1 mb-1">462.00</div>
-                <div className="text-green-400 text-[12px]  Admin_std  mt-1 mb-1">+21.00%</div>
+                  <div className="text-black text-[33px] font-normal  Admin_std  mt-1 mb-1">462.00</div>
+                  <div className="text-green-400 text-[12px]  Admin_std  mt-1 mb-1">+21.00%</div>
                 </th>
-               
-               
+
+
               </tr>
             </thead>
-         
+
           </table>
         </div>
       </div>
 
       <div className="mx-4 my-9">
-        <div className="grid gap-4 grid-cols-4">
+        <div className="grid gap-3 grid-cols-4">
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -82,7 +82,7 @@ const Welcome = () => {
             </div>
           </div>
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -95,7 +95,7 @@ const Welcome = () => {
             </div>
           </div>
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -108,7 +108,7 @@ const Welcome = () => {
             </div>
           </div>
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -125,9 +125,9 @@ const Welcome = () => {
 
       {/* Add next detail */}
       <div className="mx-4 my-4">
-        <div className="grid gap-4 grid-cols-4">
+        <div className="grid gap-3 grid-cols-4">
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -140,7 +140,7 @@ const Welcome = () => {
             </div>
           </div>
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -153,7 +153,7 @@ const Welcome = () => {
             </div>
           </div>
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -166,7 +166,7 @@ const Welcome = () => {
             </div>
           </div>
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">

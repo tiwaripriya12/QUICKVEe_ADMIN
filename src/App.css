@@ -1,26 +1,21 @@
 /* src/styles/tailwind.css */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
-
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 .icon {
   color: blue;
   font-size: 40px;
 }
 
-
-
-
 @font-face {
   font-family: adminbold;
-   src:url(./Assests/Fonts/circular-bold.TTF)
+  src: url(./Assests/Fonts/circular-bold.TTF);
 }
 
 @font-face {
   font-family: adminmedium;
-  src: url(./Assests/Fonts/circulur-medium.TTF)
+  src: url(./Assests/Fonts/circulur-medium.TTF);
 }
 
 @font-face {
@@ -33,23 +28,23 @@
   src: url(./Assests/Fonts/circulur-std-book.TTF);
 }
 
-.Admin_bold{
+.Admin_bold {
   font-family: adminbold !important;
 }
 
 .Admin_black {
-  font-family: adminblack  !important;
+  font-family: adminblack !important;
 }
 
-.admin_medium{
+.admin_medium {
   font-family: adminmedium !important;
 }
 
-.Admin_std{
-  font-family:  adminstdbook !important;
+.Admin_std {
+  font-family: adminstdbook !important;
 }
 
-.sales{
+.sales {
   font-weight: normal !important;
 }
 
@@ -59,7 +54,20 @@
 }
 
 .hover-text-yellow:hover {
-  color: #FFC400; /* Yellow color when hovered */
+  color: #ffc400; /* Yellow color when hovered */
 }
 
+.sidebar-menu {
+  position: fixed;
+  background-color: #f4f4f8;
+  /* top: 0; */
+  overflow-y: auto;
+  height: 100vh;
+  /* width: 16rem; */
+  z-index: 9;
+}
 
+.main-content {
+  overflow-y: auto;
+  height: calc(100vh - 96px);
+}

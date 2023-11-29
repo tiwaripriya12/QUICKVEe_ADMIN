@@ -13,10 +13,10 @@ const DateFilterPage = () => {
   };
 
   const handleFilterSubmit = () => {
-    // Handle filtering logic using the selected dates (startDate and endDate)
+    
     console.log('Start Date:', startDate);
     console.log('End Date:', endDate);
-    // Perform filtering or any other action based on the selected dates
+  
   };
 
   return (

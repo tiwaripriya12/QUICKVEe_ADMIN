@@ -1,8 +1,16 @@
 import React from 'react'
+import FilterProduct from './FilterProduct'
+import ProductContent from './ProductContent'
+import ProductTable from './ProductTable'
 
 const MainProducts = () => {
-  return (
-    <div>MainProducts</div>
+  return ( <>
+<FilterProduct />
+<ProductContent />
+<ProductTable />
+
+
+</>
   )
 }
 

@@ -6,7 +6,7 @@ const AttriContent = () => {
     <>
       <div className="mx-2 my-2">
         <div
-          className="box-content h-[48px] w-70 p-2 border-4 border-white bg-white rounded-xl opacity-100 mt-9"
+          className="box-content h-[48px] w-70 p-2 border-4 border-white bg-white rounded-xl opacity-100 mt-9 mx-8"
           style={{ boxShadow: "0px 3px 6px #0000001F" }}
         >
           <div className="text-sm font-semibold  mt-2 text-[#818181] flex">

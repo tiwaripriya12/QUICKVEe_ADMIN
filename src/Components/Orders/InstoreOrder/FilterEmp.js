@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BsChevronDown } from 'react-icons/bs';
-import DateRange from "./DateRange";
 
 const FilterEmp = () => {
   const [searchId, setSearchId] = useState(""); // State to track search ID
 
   const handleFilter = (filterType) => {
     console.log('Selected filter:', filterType);
-    // Implement your logic based on the selected filter type
+   
   };
 
   const handleSearch = () => {
     console.log("Search ID:", searchId);
-    // Implement your search functionality here
+   
   };
 
   return (
     <>
-      <div className="bg-white p-4">
+      <div className="bg-white p-4 mb-3 rounded-md">
         <div className="flex border border-gray-300 rounded-md overflow-hidden">
           <input
             type="text"
@@ -36,17 +35,17 @@ const FilterEmp = () => {
         </div>
       </div>
 
-      <div className="bg-white mt-3 p-4">
+      <div className="bg-white p-4 rounded-md">
         <div className="mb-4">
           <h3 className="text-black text-[18px] font-semibold leading-none">Filter By</h3>
         </div>
 
-        {/* Filter options */}
         <div className="flex flex-col sm:flex-row justify-between text-gray-600 mb-1">
-          <div className="mb-2 sm:mb-0">Transaction</div>
-          <div className="mb-2 sm:mb-0">Employees</div>
-          <div className="mb-2 sm:mb-0">Order Status</div>
+          <div>Transaction</div>
+          <div>Employees</div>
+          <div>Order Status</div>
         </div>
+
         <div className="flex flex-col sm:flex-row">
           <button
             onClick={() => handleFilter('allEmployees')}
@@ -70,6 +69,10 @@ const FilterEmp = () => {
             <BsChevronDown className="ml-1 text-black" />
           </button>
         </div>
+      </div>
+
+      <div>
+        
       </div>
     </>
   );
