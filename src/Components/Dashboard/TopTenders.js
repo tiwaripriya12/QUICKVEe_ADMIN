@@ -38,7 +38,7 @@ const TopTenders = () => {
             <div>
               <Link
                 to="/toptraders"
-                className="py-2 mx-6 text-[18px] admin_medium"
+                className="py-8 mx-6 text-[18px] admin_medium"
               >
                 Top Tenders by Sales Amount
               </Link>

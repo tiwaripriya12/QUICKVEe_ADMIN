@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BsChevronDown } from 'react-icons/bs';
 
+
 const FilterEmp = () => {
   const [searchId, setSearchId] = useState(""); // State to track search ID
 
@@ -14,6 +15,20 @@ const FilterEmp = () => {
     console.log("Search ID:", searchId);
    
   };
+  const [selectedFilter, setSelectedFilter] = useState('');
+
+  const handleFilterChange = (event, filterType) => {
+    // Clear selected filter for other options
+    document.getElementById('employeeFilter').selectedIndex = 0;
+    document.getElementById('transactionFilter').selectedIndex = 0;
+    document.getElementById('orderStatusFilter').selectedIndex = 0;
+
+    // Set the selected filter for the current option
+    setSelectedFilter(filterType);
+
+    // Add any additional logic you need based on the selected filter
+  };
+
 
   return (
     <>
@@ -36,41 +51,62 @@ const FilterEmp = () => {
       </div>
 
       <div className="bg-white p-4 rounded-md">
-        <div className="mb-4">
-          <h3 className="text-black text-[18px] font-semibold leading-none">Filter By</h3>
-        </div>
-
-        <div className="flex flex-col sm:flex-row justify-between text-gray-600 mb-1">
-          <div>Transaction</div>
-          <div>Employees</div>
-          <div>Order Status</div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row">
-          <button
-            onClick={() => handleFilter('allEmployees')}
-            className="flex-1 bg-white text-gray-600 px-4 py-2 rounded-t-md sm:rounded-l-md border border-gray-300 mb-2 sm:mb-0 sm:mr-2 focus:outline-none flex items-center justify-between"
-          >
-            <span className="text-black text-[15px]">All Employees</span>
-            <BsChevronDown className="ml-1 text-black" />
-          </button>
-          <button
-            onClick={() => handleFilter('allTransactions')}
-            className="flex-1 bg-white text-gray-600 px-4 py-2 border border-gray-300 mb-2 sm:mb-0 sm:mr-2 focus:outline-none flex items-center justify-between"
-          >
-            <span className="text-black text-[15px]">All Transactions</span>
-            <BsChevronDown className="ml-1 text-black" />
-          </button>
-          <button
-            onClick={() => handleFilter('orderStatus')}
-            className="flex-1 bg-white text-gray-600 px-4 py-2 rounded-b-md sm:rounded-r-md border border-gray-300 focus:outline-none flex items-center justify-between"
-          >
-            <span className="text-black text-[15px]">Order Status</span>
-            <BsChevronDown className="ml-1 text-black" />
-          </button>
-        </div>
+      <div className="mb-4">
+        <h3 className="text-black text-[18px] font-semibold leading-none">Filter By</h3>
       </div>
 
+      
+
+      <div className="flex flex-col sm:flex-row">
+        <div className="flex-1 mb-2 sm:mb-0 sm:mr-2">
+          <label className="block text-gray-600 text-[12px] mb-1 Admin_std" htmlFor="employeeFilter">
+            Employee Filter
+          </label>
+          <select
+            id="employeeFilter"
+            value={selectedFilter === 'employee' ? 'allEmployees' : ''}
+            onChange={(e) => handleFilterChange(e, 'employee')}
+            className="w-full bg-white text-gray-600 px-4 py-2 rounded-t-md sm:rounded-l-md border border-gray-300 focus:outline-none"
+          >
+            <option value="" disabled hidden>Select an option</option>
+            <option value="allEmployees">All Employees</option>
+            {/* Add other options as needed */}
+          </select>
+        </div>
+
+        <div className="flex-1 mb-2 sm:mb-0 sm:mr-2">
+          <label className="block text-gray-600 text-sm font-semibold mb-1" htmlFor="transactionFilter">
+            Transaction Filter
+          </label>
+          <select
+            id="transactionFilter"
+            value={selectedFilter === 'transaction' ? 'allTransactions' : ''}
+            onChange={(e) => handleFilterChange(e, 'transaction')}
+            className="w-full bg-white text-gray-600 px-4 py-2 border border-gray-300 focus:outline-none"
+          >
+            <option value="" disabled hidden>Select an option</option>
+            <option value="allTransactions">All Transactions</option>
+            {/* Add other options as needed */}
+          </select>
+        </div>
+
+        <div className="flex-1">
+          <label className="block text-gray-600 text-sm font-semibold mb-1" htmlFor="orderStatusFilter">
+            Order Status Filter
+          </label>
+          <select
+            id="orderStatusFilter"
+            value={selectedFilter === 'orderStatus' ? 'orderStatus' : ''}
+            onChange={(e) => handleFilterChange(e, 'orderStatus')}
+            className="w-full bg-white text-gray-600 px-4 py-2 rounded-b-md sm:rounded-r-md border border-gray-300 focus:outline-none"
+          >
+            <option value="" disabled hidden>Select an option</option>
+            <option value="orderStatus">Order Status</option>
+            {/* Add other options as needed */}
+          </select>
+        </div>
+      </div>
+    </div>
       <div>
         
       </div>

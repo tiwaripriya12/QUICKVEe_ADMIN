@@ -17,6 +17,7 @@ import MainImportData from "./Components/ImportData/MainImportData";
 import TopTenders from "./Components/Dashboard/TopTenders";
 //import ProductTable from "./Components/Products/ProductTable";
 import ProductEdit from "./Components/Products/ProductEdit";
+import AddPo from "./Components/PurchaseOrders/AddPo";
 
 
 
@@ -41,6 +42,8 @@ function App() {
           <Route exact path="addCategory" element={<AddCategory />} />
           <Route exact path="toptraders" element={<TopTenders />} />
           <Route exact path="productedit" element={<ProductEdit />} />
+          <Route exact path="addpurchaseOrder" element={<AddPo />} />
+
         </Route>
       </Routes>
   

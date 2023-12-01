@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FaAngleLeft } from 'react-icons/fa';
+import DefaultDrop from './DefaultDrop';
+import ProductImagesField from './ProductImagesField';
 
 const ProductEdit = () => {
   const [productData, setProductData] = useState({
@@ -49,6 +51,12 @@ const ProductEdit = () => {
     navigateToCategoryPage();
   };
 
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const updateSelectedOptions = (newSelectedOptions) => {
+    setSelectedOptions(newSelectedOptions);
+    // Perform any additional logic or data updating here
+  };
   return (
     <>
       <div className='mx-2 my-2'>
@@ -137,10 +145,19 @@ const ProductEdit = () => {
             </div> */}
 
             {/* Update and Cancel buttons */}
-            <div className="flex justify-end space-x-4">
+            
+          </form>
+          <div>
+      <DefaultDrop options={['Option 1', 'Option 2', 'Option 3']} selectedOptions={selectedOptions} updateSelectedOptions={updateSelectedOptions} />
+   
+    </div>
+         
+          <ProductImagesField />
+          <div className="flex justify-end space-x-4">
               <button
                 type="submit"
                 className="px-4 py-2 bg-green-500 text-white rounded-md"
+                onSubmit={{updateSelectedOptions}}
               >
                 Update
               </button>
@@ -152,7 +169,6 @@ const ProductEdit = () => {
                 Cancel
               </button>
             </div>
-          </form>
         </div>
       </div>
     </>

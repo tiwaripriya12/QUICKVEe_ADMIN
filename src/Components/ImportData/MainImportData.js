@@ -1,8 +1,14 @@
 import React from 'react'
+import ImportData from './ImportData'
+import Csvimport from './Csvimport'
 
 const MainImportData = () => {
   return (
-    <div>MainImportData</div>
+   <>
+   <ImportData />
+   <Csvimport />
+   
+   </>
   )
 }
 

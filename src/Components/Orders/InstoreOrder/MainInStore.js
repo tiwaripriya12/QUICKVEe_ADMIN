@@ -3,8 +3,8 @@ import FilterEmp from "./FilterEmp";
 //import { DateRange } from "@mui/icons-material";
 import DateRange from "./DateRange";
 import { ContentCopy } from "@mui/icons-material";
- import ContentList from "./ContentList";
- import TableViewData from "./TableViewData";
+import ContentList from "./ContentList";
+import TableViewData from "./TableViewData";
 
 const MainInStore = () => {
   const [activeTab, setActiveTab] = useState("online");
@@ -18,38 +18,35 @@ const MainInStore = () => {
       return (
         <div className="">
           <div className="">
-          <FilterEmp />
+            <FilterEmp />
           </div>
           <div className="w-full mt-24">
-          <DateRange />
+            <DateRange />
           </div>
           <div className="w-full">
-          <ContentList />
+            <ContentList />
           </div>
           <div className="">
             <TableViewData />
           </div>
-       
         </div>
       );
     } else if (activeTab === "offline") {
       return (
         <>
-        <div className="">
-          
-          <FilterEmp />
+          <div className="">
+            <FilterEmp />
           </div>
           <div className="w-full mt-24">
-          <DateRange />
+            <DateRange />
           </div>
           <div className="w-full">
-          <ContentList />
+            <ContentList />
           </div>
           <div className="">
             <TableViewData />
           </div>
-       
-          </>
+        </>
       );
     }
     return null;
@@ -57,7 +54,10 @@ const MainInStore = () => {
 
   return (
     <div className="mx-8 my-2">
-      <div className="box-content h-[300px] w-70 p-4 border-4 border-white bg-white rounded-xl opacity-100 mt-9 mx-8" style={{ boxShadow: "0px 3px 6px #0000001F" }}>
+      <div
+        className="box-content h-[300px] w-70 p-4 border-4 border-white bg-white rounded-xl opacity-100 mt-9 mx-12"
+        style={{ boxShadow: "0px 3px 6px #0000001F" }}
+      >
         <div className="">
           <button
             onClick={() => handleTabClick("offline")}
@@ -83,9 +83,7 @@ const MainInStore = () => {
         </div>
 
         <div className="bg-white-100 p-4">
-          <div className="mb-4 w-full">
-            {renderInStoreContent()}
-          </div>
+          <div className="mb-4 w-full">{renderInStoreContent()}</div>
         </div>
       </div>
     </div>

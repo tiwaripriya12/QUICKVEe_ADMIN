@@ -71,3 +71,7 @@
   overflow-y: auto;
   height: calc(100vh - 96px);
 }
+
+.importBtn {
+          margin-left: 42rem;
+}

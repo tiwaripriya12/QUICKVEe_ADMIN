@@ -186,7 +186,7 @@ const menuItems = [
         className="h-6 w-6 mt-4 mb-4"
       />
     ),
-    text: "Purchase Data",
+    text: "Purchase Orders",
     link: "/purchase-data",
   },
   {

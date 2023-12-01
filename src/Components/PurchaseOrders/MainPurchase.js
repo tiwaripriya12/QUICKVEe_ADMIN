@@ -1,8 +1,15 @@
 import React from 'react'
+import SearchField from './SearchField'
+import PurchaseTable from './PurchaseTable'
 
 const MainPurchase = () => {
   return (
-    <div>MainPurchase</div>
+  <>
+  <SearchField />
+
+  <PurchaseTable />
+  
+  </>
   )
 }
 
