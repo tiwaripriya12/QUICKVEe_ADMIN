@@ -31,7 +31,7 @@ const FilterProduct = () => {
     <>
       <div className="mx-2 my-2">
         <div
-          className="box-content h-[200px] w-70 p-4 border-4 border-white bg-white rounded-xl opacity-100 my-9 mx-8"
+          className="box-content h-[250px] w-70 p-4 border-4 border-white bg-white rounded-xl opacity-100 my-9 mx-8"
           style={{ boxShadow: "0px 3px 6px #0000001F" }}
         >
           <div className="bg-white p-4 mb-3 rounded-md">
@@ -60,7 +60,7 @@ const FilterProduct = () => {
           <div className="flex flex-col sm:flex-row">
         <div className="flex-1 mb-2 sm:mb-0 sm:mr-2">
           <label className="block text-gray-600 text-sm font-semibold mb-1" htmlFor="employeeFilter">
-            Employee Filter
+            Employee 
           </label>
           <select
             id="employeeFilter"
@@ -76,7 +76,7 @@ const FilterProduct = () => {
 
         <div className="flex-1 mb-2 sm:mb-0 sm:mr-2">
           <label className="block text-gray-600 text-sm font-semibold mb-1" htmlFor="transactionFilter">
-            Transaction Filter
+            Transaction 
           </label>
           <select
             id="transactionFilter"
@@ -92,7 +92,7 @@ const FilterProduct = () => {
 
         <div className="flex-1">
           <label className="block text-gray-600 text-sm font-semibold mb-1" htmlFor="orderStatusFilter">
-            Order Status Filter
+            Order Status 
           </label>
           <select
             id="orderStatusFilter"

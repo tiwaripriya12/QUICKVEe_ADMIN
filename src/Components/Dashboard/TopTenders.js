@@ -35,7 +35,7 @@ const TopTenders = () => {
             className="gap-2 py-4 cursor-pointer bg-gray rounded-2xl opacity bg-white mx-8"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
-            <div>
+            <div className='mt-4'>
               <Link
                 to="/toptraders"
                 className="py-8 mx-6 text-[18px] admin_medium"

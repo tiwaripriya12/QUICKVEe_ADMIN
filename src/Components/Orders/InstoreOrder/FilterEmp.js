@@ -52,21 +52,21 @@ const FilterEmp = () => {
 
       <div className="bg-white p-4 rounded-md">
       <div className="mb-4">
-        <h3 className="text-black text-[18px] font-semibold leading-none">Filter By</h3>
+        <h3 className="text-black text-[18px] admin_medium opacity-100">Filter By</h3>
       </div>
 
       
 
       <div className="flex flex-col sm:flex-row">
         <div className="flex-1 mb-2 sm:mb-0 sm:mr-2">
-          <label className="block text-gray-600 text-[12px] mb-1 Admin_std" htmlFor="employeeFilter">
-            Employee Filter
+          <label className="block text-[14px] text-[#818181] Admin_std mb-1" htmlFor="employeeFilter">
+            Employee
           </label>
           <select
             id="employeeFilter"
             value={selectedFilter === 'employee' ? 'allEmployees' : ''}
             onChange={(e) => handleFilterChange(e, 'employee')}
-            className="w-full bg-white text-gray-600 px-4 py-2 rounded-t-md sm:rounded-l-md border border-gray-300 focus:outline-none"
+            className="w-full bg-white text-gray-600 px-4 py-2 border border-gray-300 focus:outline-none rounded"
           >
             <option value="" disabled hidden>Select an option</option>
             <option value="allEmployees">All Employees</option>
@@ -75,14 +75,14 @@ const FilterEmp = () => {
         </div>
 
         <div className="flex-1 mb-2 sm:mb-0 sm:mr-2">
-          <label className="block text-gray-600 text-sm font-semibold mb-1" htmlFor="transactionFilter">
-            Transaction Filter
+          <label className="block text-[14px] text-[#818181] Admin_std mb-2" htmlFor="transactionFilter">
+            Transaction 
           </label>
           <select
             id="transactionFilter"
             value={selectedFilter === 'transaction' ? 'allTransactions' : ''}
             onChange={(e) => handleFilterChange(e, 'transaction')}
-            className="w-full bg-white text-gray-600 px-4 py-2 border border-gray-300 focus:outline-none"
+            className="w-full bg-white text-gray-600 px-4 py-2 border border-gray-300 focus:outline-none rounded"
           >
             <option value="" disabled hidden>Select an option</option>
             <option value="allTransactions">All Transactions</option>
@@ -91,14 +91,14 @@ const FilterEmp = () => {
         </div>
 
         <div className="flex-1">
-          <label className="block text-gray-600 text-sm font-semibold mb-1" htmlFor="orderStatusFilter">
-            Order Status Filter
+          <label className="block text-[14px] text-[#818181] Admin_std mb-2" htmlFor="orderStatusFilter">
+            Order Status
           </label>
           <select
             id="orderStatusFilter"
             value={selectedFilter === 'orderStatus' ? 'orderStatus' : ''}
             onChange={(e) => handleFilterChange(e, 'orderStatus')}
-            className="w-full bg-white text-gray-600 px-4 py-2 rounded-b-md sm:rounded-r-md border border-gray-300 focus:outline-none"
+            className="w-full bg-white text-gray-600 px-4 py-2 border border-gray-300 focus:outline-none rounded"
           >
             <option value="" disabled hidden>Select an option</option>
             <option value="orderStatus">Order Status</option>

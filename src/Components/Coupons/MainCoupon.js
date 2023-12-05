@@ -1,8 +1,13 @@
 import React from 'react'
+import CouponDiscount from './CouponDiscount'
 
 const MainCoupon = () => {
   return (
-    <div>MainCoupon</div>
+ <>
+   <CouponDiscount />
+ 
+ 
+ </>
   )
 }
 

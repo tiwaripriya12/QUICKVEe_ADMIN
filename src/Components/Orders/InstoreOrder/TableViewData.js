@@ -2,6 +2,7 @@ import { useState } from "react";
 import { DefaultPagination } from "./DefaultPagination";
 
 
+
 const TableViewData = () => {
   const [selectedStatus, setSelectedStatus] = useState(""); // State to hold selected status filter
 
@@ -101,6 +102,7 @@ const TableViewData = () => {
         >
           <div className="">
            <DefaultPagination />
+         
           </div>
           <div className="flex justify-end mb-4">
             <div className="relative inline-block text-left">

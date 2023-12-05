@@ -18,6 +18,7 @@ import TopTenders from "./Components/Dashboard/TopTenders";
 //import ProductTable from "./Components/Products/ProductTable";
 import ProductEdit from "./Components/Products/ProductEdit";
 import AddPo from "./Components/PurchaseOrders/AddPo";
+import AddCoupon from "./Components/Coupons/AddCoupon";
 
 
 
@@ -43,6 +44,7 @@ function App() {
           <Route exact path="toptraders" element={<TopTenders />} />
           <Route exact path="productedit" element={<ProductEdit />} />
           <Route exact path="addpurchaseOrder" element={<AddPo />} />
+          <Route exact path="addCoupon" element={<AddCoupon />} />
 
         </Route>
       </Routes>

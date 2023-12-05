@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-
 import { FaChevronDown } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import DashboardIcon from "../../Assests/Dashboard/dashboard.svg";
+// import DashboardActiveIcon from "../../Assests/Dashboard/dashboard-active.svg"; // New active icon
 import ShoppingCartIcon from "../../Assests/Dashboard/orders.svg";
 import CategoryIcon from "../../Assests/Dashboard/category.svg";
 import CouponIcon from "../../Assests/Dashboard/product.svg";
@@ -14,13 +14,21 @@ import VenderIcon from "../../Assests/Dashboard/vender.svg";
 import TimesheetIcon from "../../Assests/Dashboard/timesheet.svg";
 import StoreIcon from "../../Assests/Dashboard/store.svg";
 import ReportIcon from "../../Assests/Dashboard/reporting.svg";
+import DashIcon from "../../Assests/Dashboard/dashIcon.svg";
+import OrderYellow from "../../Assests/Dashboard/ordery.svg";
+import CatIcon from "../../Assests/Dashboard/categoryd.svg";
+
+
+
+
 
 
 const SideMenu = ({ isMenuOpen, setIsMenuToggle }) => {
-  const [clickedItem, setClickedItem] = useState(null);
+  const [activeItem, setActiveItem] = useState(null); // New state variable
   const navigate = useNavigate();
+
   const handleItemClick = (id) => {
-    setClickedItem(id);
+    setActiveItem(id); // Update the active item
   };
 
   return (
@@ -31,7 +39,6 @@ const SideMenu = ({ isMenuOpen, setIsMenuToggle }) => {
       >
         {/* Left Side Menu */}
         <div className="flex-1 bg-black text-white p-4">
-          {/* <div className=""> */}
           {isMenuOpen
             ? menuItems.map((item) => (
                 <div key={item.id} className="mb-4 text-base">
@@ -40,12 +47,12 @@ const SideMenu = ({ isMenuOpen, setIsMenuToggle }) => {
                   ) : (
                     <div
                       className={`flex items-center ${
-                        clickedItem === item.id
+                        activeItem === item.id
                           ? "text-[#FFC400]"
                           : "text-gray-400 hover-text-yellow"
                       }`}
                     >
-                      {item.icon}
+                      {activeItem === item.id ? item.activeIcon : item.icon}
                       <Link
                         onClick={() => handleItemClick(item.id)}
                         className="ml-2 menu-item text-[16px] Admin_std"
@@ -57,7 +64,6 @@ const SideMenu = ({ isMenuOpen, setIsMenuToggle }) => {
                   )}
                 </div>
               ))
-              
             : menuItems.map((item) => (
                 <div key={item.id} className="mb-4 text-base cursor-pointer">
                   {item.dropdownItems ? (
@@ -65,7 +71,7 @@ const SideMenu = ({ isMenuOpen, setIsMenuToggle }) => {
                   ) : (
                     <div
                       className={`flex flex-col items-center ${
-                        clickedItem === item.id
+                        activeItem === item.id
                           ? "text-[#FFC400]"
                           : "text-gray-400 hover-text-yellow"
                       }`}
@@ -74,19 +80,16 @@ const SideMenu = ({ isMenuOpen, setIsMenuToggle }) => {
                         navigate(item.link);
                       }}
                     >
-                      {item.icon}
+                      {activeItem === item.id ? item.activeIcon : item.icon}
                     </div>
                   )}
                 </div>
               ))}
-          {/* </div> */}
         </div>
 
         {/* Right Dashboard Menu */}
       </div>
-     
     </>
-    
   );
 };
 
@@ -100,28 +103,21 @@ const DropdownMenuItem = ({ item }) => {
 
   return (
     <div className="flex items-center">
-      
-      {" "}
-      {/* mt-4 and mb-4 apply equal top and bottom margins */}
-      {/* Your existing menu code */}
       {item.icon}
       <p
         className="ml-2 cursor-pointer menu-item text-gray-400  "
         onClick={toggleDropdown}
       >
-        {/* Apply text-gray-400 class for the specified color */}
         {item.text}
         <FaChevronDown className="ml-1" />
       </p>
       {isDropdownOpen && (
         <div className="ml-4 bg-white p-2">
-          {/* Dropdown items go here */}
           {item.dropdownItems.map((dropdownItem) => (
             <p
               key={dropdownItem.id}
               className="flex items-center submenu-item text-gray-400"
             >
-              {/* Apply text-gray-400 class for the specified color */}
               {dropdownItem.text}
               <FaChevronDown className="ml-1" />
             </p>
@@ -131,20 +127,32 @@ const DropdownMenuItem = ({ item }) => {
     </div>
   );
 };
+
 // Define menu items with icons and text
 const menuItems = [
   {
     id: 1,
     icon: (
-      <img src={DashboardIcon} alt="Dashboard" className="h-6 w-6 mt-4 mb-4" />
+      <img src={DashIcon} alt="Dashboard" className="h-6 w-6 mt-4 mb-4 group-hover:fill-black" />
+    ),
+    activeIcon: (
+      <img src={DashboardIcon} alt="Dashboard" className="h-6 w-6 mt-4 mb-4 group-hover:fill-black" />
     ),
     text: "Dashboard",
     link: "/dashboard",
   },
+  // ... (other menu items)
+
+
+
+
   {
     id: 2,
     icon: (
       <img src={ShoppingCartIcon} alt="Order" className="h-6 w-6 mt-4 mb-4" />
+    ),
+    activeIcon: (
+      <img src={OrderYellow} alt="Dashboard" className="h-6 w-6 mt-4 mb-4 " />
     ),
     text: "Order",
     link: "/order",
@@ -153,6 +161,9 @@ const menuItems = [
     id: 3,
     icon: (
       <img src={CategoryIcon} alt="Category" className="h-6 w-6 mt-4 mb-4" />
+    ),
+    activeIcon: (
+      <img src={CatIcon} alt="Dashboard" className="h-6 w-6 mt-4 mb-4 " />
     ),
     text: "Category",
     link: "/category",
@@ -224,8 +235,8 @@ const menuItems = [
     text: "Store Settings",
     className: "flex items-center gap-2",
     dropdownItems: [
-      { id: 61, text: "Submenu 1", link: "/store-settings/submenu1" },
-      { id: 62, text: "Submenu 2", link: "/store-settings/submenu2" },
+      // { id: 61, text: "Submenu 1", link: "/store-settings/submenu1" },
+      // { id: 62, text: "Submenu 2", link: "/store-settings/submenu2" },
     ],
   },
   {
@@ -234,8 +245,8 @@ const menuItems = [
     text: "Reporting",
     className: "flex items-center gap-2",
     dropdownItems: [
-      { id: 61, text: "Submenu 1", link: "/reporting/submenu1" },
-      { id: 62, text: "Submenu 2", link: "/reporting/submenu2" },
+      // { id: 61, text: "Submenu 1", link: "/reporting/submenu1" },
+      // { id: 62, text: "Submenu 2", link: "/reporting/submenu2" },
     ],
   },
 ];

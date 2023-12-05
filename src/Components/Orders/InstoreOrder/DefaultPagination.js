@@ -13,7 +13,7 @@ export function DefaultPagination() {
   });
 
   const next = () => {
-    if (active === 10) return;
+    if (active === entriesToShow) return;
     setActive(active + 1);
   };
 
@@ -24,7 +24,7 @@ export function DefaultPagination() {
 
   const handleShowEntries = (count) => {
     setEntriesToShow(count);
-    setActive(1); // Reset to the first page when changing the number of entries
+    setActive(1); 
   };
 
   const renderPaginationItems = () => {
@@ -32,14 +32,16 @@ export function DefaultPagination() {
     for (let i = 1; i <= entriesToShow; i++) {
       items.push(
         <IconButton
-          key={i}
-          className={`border-[#000] rounded-full py-4 justify-center px-4 ${
-            active === i ? 'bg-[#000] text-white' : 'bg-white text-[#000]'
-          }`}
-          {...getItemProps(i)}
-        >
-          {i}
-        </IconButton>
+        key={i}
+        className={`border rounded py-4 px-6 ${
+          active === i
+            ? 'border-blue-500 bg-[#F9F9F9] text-[#0A64F9]'
+            : 'border-[#000] bg-white text-[#000]'
+        }`}
+        {...getItemProps(i)}
+      >
+        {i}
+      </IconButton>
       );
     }
     return items;
@@ -47,7 +49,7 @@ export function DefaultPagination() {
 
   return (
     <div className="flex flex-col items-start gap-1 ">
-      <div className="flex items-center gap-4 ml-auto">
+    <div className="flex items-center gap-4 ml-auto">
         <Button
           variant="text"
           className="flex items-center gap-2"
@@ -67,9 +69,6 @@ export function DefaultPagination() {
         </Button>
       </div>
       <div className="mt-4">Current Page: {active}</div>
-      <div>
-     
-      </div>
     </div>
   );
 }

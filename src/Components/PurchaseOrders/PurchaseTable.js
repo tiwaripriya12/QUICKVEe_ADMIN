@@ -1,13 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaCircle, FaAdjust,FaCircleNotch, } from "react-icons/fa";
- import ResciveIcon  from '../../Assests/Dashboard/rescived.svg';
- import VoicIcon from '../../Assests/Dashboard/void.svg';
- import ActiveIcon from '../../Assests/Dashboard/active.svg';
-
+import ResciveIcon from '../../Assests/Dashboard/rescived.svg';
+import VoicIcon from '../../Assests/Dashboard/void.svg';
+import ActiveIcon from '../../Assests/Dashboard/active.svg';
 
 const PurchaseTable = () => {
-
   const purchaseData = [
     {
       order: 'PO0001',
@@ -64,8 +61,9 @@ const PurchaseTable = () => {
         lastUpdate: "2023-01-01",
         receivedAt: "2023-01-15",
       },
-    // Add more data as needed
+   
   ];
+  
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -83,32 +81,22 @@ const PurchaseTable = () => {
         return "";
     }
   };
-//   const getReceivedIcon = (status) => {
-//     switch (status) {
-//       case "Received":
-//         return <FaCheck className="text-green-500" />;
-//       case "Active":
-//         return <FaAdjust className="text-blue-500" />;
-//       default:
-//         return null;
-//     }
-//   };
-const getReceivedIcon = (received) => {
+
+  const getReceivedIcon = (received) => {
     if (received === "Yes") {
-      return <img src={ResciveIcon} alt="Timesheet" className="h-6 w-6 mt-4 mb-4 text-2xl" /> ;
+      return <img src={ResciveIcon} alt="Received" className="h-6 w-6 mt-4 mb-4 text-2xl" />;
     } else if (received === "Partial") {
-      return<img src={VoicIcon} alt="Timesheet" className="h-6 w-6 mt-4 mb-4 text-2xl" />;
+      return <img src={VoicIcon} alt="Partial" className="h-6 w-6 mt-4 mb-4 text-2xl" />;
     } else if (received === "Active") {
-      return <img src={ActiveIcon} alt="Timesheet" className="h-6 w-6 mt-4 mb-4 text-2xl" />
+      return <img src={ActiveIcon} alt="Active" className="h-6 w-6 mt-4 mb-4 text-2xl" />;
     } else if (received === "Draft") {
-      return <img src={VoicIcon} alt="Timesheet" className="h-6 w-6 mt-4 mb-4 text-2xl" />
+      return <img src={VoicIcon} alt="Draft" className="h-6 w-6 mt-4 mb-4 text-2xl" />;
     } else if (received === "Void") {
-      return <img src={ResciveIcon} alt="Timesheet" className="h-6 w-6 mt-4 mb-4 text-2xl" />
+      return <img src={ResciveIcon} alt="Void" className="h-6 w-6 mt-4 mb-4 text-2xl" />;
     } else {
-      return null; // You can customize this for other cases or add a default icon
+      return null;
     }
   };
-  
 
   return (
     <div className="mx-2 my-2">
@@ -131,41 +119,46 @@ const getReceivedIcon = (received) => {
           </div>
         </div>
         <div className="overflow-x-auto">
-  <table className="min-w-full bg-white">
-    <thead>
-      <tr className="bg-black text-white">
-        <th className="py-2 px-4">Order</th>
-        <th className="py-2 px-4">Status</th>
-        <th className="py-2 px-4">Received</th>
-        <th className="py-2 px-4">Total Qty</th>
-        <th className="py-2 px-4">Vendor Name</th>
-        <th className="py-2 px-4">Total Cost</th>
-        <th className="py-2 px-4">Due</th>
-        <th className="py-2 px-4">Last Update</th>
-        <th className="py-2 px-4">Received At</th>
-      </tr>
-    </thead>
-    <tbody>
-      {purchaseData.map((purchase, index) => (
-        <tr key={purchase.order} className={index % 2 === 0 ? 'bg-[#F9F9F9] h-16' : 'bg-white h-16'}>
-          <td className="py-2 px-4">{purchase.order}</td>
-          <td className={`py-2 px-4 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal ${getStatusColor(purchase.status)}`}>
-            {purchase.status}
-          </td>
-          <td className="py-2 px-4 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal" style={{ height: '20px' }}>
-            {getReceivedIcon(purchase.received)}
-          </td>
-          <td className="py-2 px-4 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal" style={{ height: '20px' }}>{purchase.totalQty}</td>
-          <td className="py-2 px-4 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal" style={{ height: '20px' }}>{purchase.vendorName}</td>
-          <td className="py-2 px-4 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal" style={{ height: '20px' }}>{`$${purchase.totalCost}`}</td>
-          <td className="py-2 px-4 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal" style={{ height: '20px' }}>{`$${purchase.due}`}</td>
-          <td className="py-2 px-4 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal" style={{ height: '20px' }}>{purchase.lastUpdate}</td>
-          <td className="py-2 px-4 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal" style={{ height: '20px' }}>{purchase.receivedAt}</td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
+          <table className="min-w-full bg-white">
+            <thead>
+              <tr className="bg-black text-white">
+                <th className="py-4 px-2">Order</th>
+                <th className="py-4 px-2">Status</th>
+                <th className="py-4 px-2">Received</th>
+                <th className="py-4 px-2">Total Qty</th>
+                <th className="py-4 px-2">Vendor Name</th>
+                <th className="py-4 px-2">Total Cost</th>
+                <th className="py-4 px-2">Due</th>
+                <th className="py-4 px-2">Last Update</th>
+                <th className="py-4 px-2">Received At</th>
+              </tr>
+            </thead>
+            <tbody>
+              {purchaseData.map((purchase, index) => (
+                <tr
+                  key={purchase.order}
+                  className={
+                    index % 2 === 0 ? 'bg-[#F9F9F9] h-20' : 'bg-white h-20'
+                  }
+                >
+                  <td className="py-2 px-8">{purchase.order}</td>
+                  <td className={`py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal ${getStatusColor(purchase.status)}`}>
+                    {purchase.status}
+                  </td>
+                  <td className="py-2 px-8 flex items-center">
+                    {getReceivedIcon(purchase.received)}
+                  </td>
+                  <td className="py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{purchase.totalQty}</td>
+                  <td className="py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{purchase.vendorName}</td>
+                  <td className="py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{`$${purchase.totalCost}`}</td>
+                  <td className="py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{`$${purchase.due}`}</td>
+                  <td className="py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{purchase.lastUpdate}</td>
+                  <td className="py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{purchase.receivedAt}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
