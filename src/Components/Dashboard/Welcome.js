@@ -10,7 +10,7 @@ const Welcome = () => {
     <>
       <div className="">
         <div className="relative">
-          <div className="text-xl text-black mx-9 mt-5 font-sans font-bold top-111 left-274 w-198 h-20 leading-28 Admin_std flex">
+          <div className="text-[20px] text-black mx-9 left-274 w-198 h-20 mt-6 admin_medium flex opacity-100 tracking-tight">
             Welcome Malik Saleh
           </div>
           {/* <div className="text-xl text-black mx-9 mt-5 font-sans font-bold top-111 left-274 w-198 h-20 leading-28 Admin_std">
@@ -21,7 +21,7 @@ const Welcome = () => {
 
       <div className="mx-4">
         <div
-          className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
+          className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-2"
           style={{ boxShadow: "0px 3px 6px #0000001F" }}
         >
           <table className="w-full">
@@ -68,7 +68,7 @@ const Welcome = () => {
       <div className="mx-4 my-9">
         <div className="grid gap-3 grid-cols-4">
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-2"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -82,7 +82,7 @@ const Welcome = () => {
             </div>
           </div>
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-2"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -95,7 +95,7 @@ const Welcome = () => {
             </div>
           </div>
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-2"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -108,7 +108,7 @@ const Welcome = () => {
             </div>
           </div>
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-2"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -127,7 +127,7 @@ const Welcome = () => {
       <div className="mx-4 my-4">
         <div className="grid gap-3 grid-cols-4">
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-2"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -140,7 +140,7 @@ const Welcome = () => {
             </div>
           </div>
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-2"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -153,7 +153,7 @@ const Welcome = () => {
             </div>
           </div>
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-2"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">
@@ -166,7 +166,7 @@ const Welcome = () => {
             </div>
           </div>
           <div
-            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-8"
+            className="box-content h-32 w-70 p-4 border-4 border-white bg-white  rounded-2xl opacity-100 mx-2"
             style={{ boxShadow: "0px 3px 6px #0000001F" }}
           >
             <div className="text-gray-700 font-normal text-base tracking-normal opacity-100 Admin_std">

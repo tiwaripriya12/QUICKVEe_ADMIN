@@ -12,7 +12,7 @@ export const Layout = () => {
     <div className="bg-[#F9F9F9]">
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <div>
-        <SideMenu isMenuOpen={isMenuOpen} />
+        <SideMenu isMenuOpen={isMenuOpen}  />
         <div
           className="main-content"
           style={{ paddingLeft: isMenuOpen ? "16rem" : "6rem" }}

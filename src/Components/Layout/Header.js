@@ -1,6 +1,6 @@
 // import * as React from "react";
 import { useState, useEffect } from "react";
-import Quick from "../../Assests/Images/qiocklogo.jpg";
+import Quick from "../../Assests/Dashboard/quickveeLG.png"
 import {
   BiMenu,
   BiChevronDown,
@@ -10,10 +10,17 @@ import {
 import DownlIcon from '../../Assests/Dashboard/download.svg';
 import OnlineData from '../../Assests/Dashboard/online.svg';
 import SynkData from '../../Assests/Dashboard/sync.svg';
+import DownIcon from '../../Assests/Dashboard/Down.svg'
 
 
 
 export default function Header({ isMenuOpen, setIsMenuOpen }) {
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleDropdownToggle = () => {
+    setShowDropdown(!showDropdown);
+  };
+
   const [isSticky, setIsSticky] = useState(false);
 
   const handleScroll = () => {
@@ -34,42 +41,64 @@ export default function Header({ isMenuOpen, setIsMenuOpen }) {
   return (
     <>
       <div
-        className={`sticky top-0 left-0 right-0 z-50 bg-white transition-all duration-300 h-24 shadow-md border-b-4 border-black ${
+        className={`sticky top-0 left-0 p-0 right-0 z-50 bg-white transition-all duration-300 h-18 shadow-md border-b-4 border-black ${
           isSticky ? "" : ""
         }`}
       >
-        <div className="flex items-center p-2">
+        <div className="flex items-center px-4 mx-2">
           <BiMenu
-            className="text-black text-2xl"
+            className="text-black text-[30px]"
             onClick={(e) => {
               setIsMenuOpen(!isMenuOpen);
             }}
           />
-          <img src={Quick} alt="Logo" className="w-24 ml-6" />
+          <img src={Quick} alt="Logo" className="ml-6" />
 
-          <div className="flex items-center ml-6 px-3 py-1 text-black text-base font-circular font-semibold  Admin_std">
-            Vape Store
-            <BiChevronDown className="ml-1" />
-          </div>
+          <div className="relative">
+      {/* Button to toggle dropdown */}
+      <div
+        className="flex items-center ml-6 px-3 py-1 text-black text-[20px] admin_medium cursor-pointer"
+        onClick={handleDropdownToggle}
+      >
+        Vape Store
+        <img src={DownIcon} alt="" className="w-8 h-10 ml-2" />
+      </div>
 
-          <div className="ml-auto font-circular flex items-center text-base text-black">
-          <img src={DownlIcon} alt="icon"  className='ml-2'/>
-            <p className="cursor-pointer ml-2 mr-4 font-semibold Admin_std">
-              Download App
-            </p>
+      {/* Dropdown content */}
+      {showDropdown && (
+        <div className="absolute mt-2 bg-white border rounded shadow-lg">
+          {/* Your dropdown content goes here */}
+          <div className="p-4">
+            {/* Dropdown items */}
+            <div>Category 1</div>
+            <div>Category 2</div>
+            <div>Category 3</div>
+            {/* Add more items as needed */}
           </div>
+        </div>
+      )}
+    </div>
+    <div className="flex items-center text-[20px] text-black ml-auto">
+  {/* Download App section */}
+  <div className="ml-12 flex items-center">
+    <img src={DownlIcon} alt="icon" className="ml-2" />
+    <p className="cursor-pointer ml-2  admin_medium">Download App</p>
+  </div>
 
-          <div className="ml-8 font-circular flex items-center text-base text-black">
-          <img src={OnlineData} alt="icon"  className='ml-2'/>
-            <p className="cursor-pointer ml-2 mr-4 font-semibold Admin_std">
-              Online Store
-            </p>
-           <img src={SynkData} alt="icon"  className='ml-2'/>
-            <p className="cursor-pointer ml-2 font-semibold Admin_std">
-              Sync Data
-            </p>
-          </div>
-          <div className="border-t-3 border-b-2 border-black bg-black mb-16"></div>
+  {/* Online Store and Sync Data section */}
+  <div className="ml-12 flex items-center">
+    <img src={OnlineData} alt="icon" className="ml-2" />
+    <p className="cursor-pointer ml-2 admin_medium">Online Store</p>
+    </div>
+    <div className="mx-12 flex items-center">
+    <img src={SynkData} alt="icon" className="ml-2" />
+    <p className="cursor-pointer ml-2 admin_medium">Sync Data</p>
+  </div>
+
+  {/* Vertical line separator */}
+  <div className="border-t-3 border-b-2 border-black bg-black mb-16"></div>
+</div>
+
         </div>
       </div>
     </>

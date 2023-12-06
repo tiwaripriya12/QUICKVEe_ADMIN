@@ -95,7 +95,7 @@ const TableViewData = () => {
 
   return (
     <>
-      <div className="mx-4 my-9">
+       <div className="ml-[-1.2rem] mr-[-1.2rem] my-2">
         <div
           className="box-content h-auto w-70 p-4 border-4 border-white bg-white rounded-2xl opacity-100"
           style={{ boxShadow: "0px 3px 6px #0000001F" }}
@@ -106,7 +106,7 @@ const TableViewData = () => {
           </div>
           <div className="flex justify-end mb-4">
             <div className="relative inline-block text-left">
-              <div>
+              {/* <div>
                 <span className="rounded-md shadow-sm">
                   <button
                     type="button"
@@ -136,7 +136,7 @@ const TableViewData = () => {
                     </svg>
                   </button>
                 </span>
-              </div>
+              </div> */}
               {/* Dropdown for status filter */}
               {selectedStatus && (
                 <div className="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
@@ -210,7 +210,7 @@ const TableViewData = () => {
                         {/* Add more options as needed */}
                       </select>
                     </td>
-                    <td className="py-3 px-6 text-[#0A64F9] text-[18px] admin_medium">
+                    <td className="py-3 px-6 text-[#0A64F9] text-[15px] admin_medium tracking-tight opacity-100 underline">
                       <a href={`#`} target="_blank" rel="noopener noreferrer">
                         View Details
                       </a>

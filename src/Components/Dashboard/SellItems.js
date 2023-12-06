@@ -2,6 +2,7 @@ import React from "react";
 import { FaAngleRight } from "react-icons/fa";
 import { ProgressBar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import RightIcon from "../../Assests/Dashboard/Right.svg"
 
 // import ProgressBar from "@ramonak/react-progress-bar";
 
@@ -17,12 +18,12 @@ const SellItems = () => {
   ];
 
   return (
-    <div className="mx-4 py-7 h-[100] my-9">
+    <div className="mx-2 py-7 h-[100] my-4">
       <div className="">
         <div className="container mx-auto">
           <div className="grid grid-cols-2 gap-4 ">
             <div
-              className="gap-2 py-4 cursor-pointer bg-gray rounded-2xl opacity bg-white mx-8"
+              className="gap-2 py-4 cursor-pointer bg-gray rounded-2xl opacity bg-white mx-4"
               style={{ boxShadow: "0px 3px 6px #0000001F" }}
             >
               <div className="flex items-center gap-2 py-4 cursor-pointer">
@@ -30,11 +31,11 @@ const SellItems = () => {
                   <div>
                     <Link
                       to="/toptraders"
-                      className="py-2 mx-2 text-[18px] admin_medium flex "
+                      className="py-2 mx-4 text-[18px] admin_medium flex "
                     >
                       Top Selling Items
                       <div className="ml-3">
-                      <FaAngleRight color="black ml-2" /></div>
+                      <img src={RightIcon}  alt="down" className="w-9 h-15 " /></div>
                     </Link>
                   </div>
                 </div>
@@ -67,7 +68,7 @@ const SellItems = () => {
               </table>
             </div>
             <div
-              className="gap-2 py-4 cursor-pointer bg-gray rounded-2xl opacity bg-white"
+              className="gap-2 py-4 cursor-pointer bg-gray rounded-2xl opacity bg-white mx-4"
               style={{ boxShadow: "0px 3px 6px #0000001F" }}
             >
               <table className="min-w-full bg-white mt-2">
@@ -77,11 +78,12 @@ const SellItems = () => {
                       
                       <Link
                       to="/toptraders"
-                      className="py-2 mx-2 text-[18px] admin_medium flex "
+                      className="py-2 mx-4 text-[18px] admin_medium flex "
                     >
                      Sales Tenders
                       <div className="ml-3">
-                      <FaAngleRight color="black ml-2" /></div>
+                      <img src={RightIcon}  alt="down" className="w-9 h-15 " />
+                     </div>
                     </Link>
                      
                     </div>
@@ -89,7 +91,7 @@ const SellItems = () => {
                       Total: 578.92
                     </th>
                   </tr>
-                  <div class="mt-2 bg-[#000] border-b-2 w-full mb-4"></div>
+                  <div class="mt-2 bg-[#000] border-b-2 w-[160%] mb-4"></div>
                 </thead>
                 <tbody className="text-gray-600 text-sm font-light ">
                   <tr>

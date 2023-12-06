@@ -32,24 +32,29 @@ export function DefaultPagination() {
     for (let i = 1; i <= entriesToShow; i++) {
       items.push(
         <IconButton
-        key={i}
-        className={`border rounded py-4 px-6 ${
-          active === i
-            ? 'border-blue-500 bg-[#F9F9F9] text-[#0A64F9]'
-            : 'border-[#000] bg-white text-[#000]'
-        }`}
-        {...getItemProps(i)}
-      >
-        {i}
-      </IconButton>
+          key={i}
+          className={`custom-box py-4 px-4 ${
+            active === i
+              ? 'border-blue-500 bg-[#F9F9F9] text-[#0A64F9]'
+              : 'border-[#000] bg-white text-[#000]'
+          }`}
+          {...getItemProps(i)}
+        >
+          {i}
+        </IconButton>
       );
     }
     return items;
   };
 
+
   return (
     <div className="flex flex-col items-start gap-1 ">
     <div className="flex items-center gap-4 ml-auto">
+    <div className="flex px-2 py-2 text-[14px] tracking-tight">Show
+      <div className="custom-button px-4 py-2">{active}</div>
+      </div>
+
         <Button
           variant="text"
           className="flex items-center gap-2"
@@ -67,8 +72,11 @@ export function DefaultPagination() {
         >
           <ArrowRightIcon strokeWidth={2} className="h-4 w-4" />
         </Button>
+
+       
       </div>
-      <div className="mt-4">Current Page: {active}</div>
+     
+      
     </div>
   );
 }

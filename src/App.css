@@ -75,3 +75,48 @@
 .importBtn {
           margin-left: 42rem;
 }
+
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  border: 3px solid #0A64F9;
+}
+
+.border-customColor {
+  border-color: #438AFF; /* Replace with your desired border color */
+}
+
+.custom-tooltip {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(10px); /* Adjust the value as needed */
+}
+
+.custom-box {
+  background: #F9F9F9;
+  border: 1px solid #EBEBEB;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.custom-button {
+  background: #F9F9F9;
+  border: 1px solid #EBEBEB;
+  border-radius: 4px;
+  opacity: 1;
+
+}
+
+.menu-item.active {
+  background-color: gray; /* Set the default active background color */
+}
+
+.menu-item:hover {
+  color: #FFC400; /* Set the hover color */
+}

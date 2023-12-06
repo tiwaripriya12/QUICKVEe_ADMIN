@@ -2,34 +2,40 @@ import React, { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import DashboardIcon from "../../Assests/Dashboard/dashboard.svg";
-// import DashboardActiveIcon from "../../Assests/Dashboard/dashboard-active.svg"; // New active icon
 import ShoppingCartIcon from "../../Assests/Dashboard/orders.svg";
 import CategoryIcon from "../../Assests/Dashboard/category.svg";
-import CouponIcon from "../../Assests/Dashboard/product.svg";
+import CouponIcon from "../../Assests/Dashboard/coupanb.svg";
 import AttributesIcon from "../../Assests/Dashboard/attributesadmin.svg";
-import PurchaseIcon from "../../Assests/Dashboard/attributes.svg";
-import DataIcon from "../../Assests/Dashboard/importdata.svg";
-import ProductIcon from "../../Assests/Dashboard/coupon.svg";
+import PurchaseIcon from "../../Assests/Dashboard/purchesb.svg";
+import ProductIcon from "../../Assests/Dashboard/productb.svg";
 import VenderIcon from "../../Assests/Dashboard/vender.svg";
-import TimesheetIcon from "../../Assests/Dashboard/timesheet.svg";
+import TimesheetIcon from "../../Assests/Dashboard/TimesheetB.svg";
+import TimesheetsIcon from "../../Assests/Dashboard/timesheets.svg";
 import StoreIcon from "../../Assests/Dashboard/store.svg";
 import ReportIcon from "../../Assests/Dashboard/reporting.svg";
 import DashIcon from "../../Assests/Dashboard/dashIcon.svg";
 import OrderYellow from "../../Assests/Dashboard/ordery.svg";
 import CatIcon from "../../Assests/Dashboard/categoryd.svg";
+import AtriIcon from "../../Assests/Dashboard/attributesy.svg";
+import ProdIcon from "../../Assests/Dashboard/productY.svg";
+import VenIcon from "../../Assests/Dashboard/venderb.svg";
+import VenIcons from "../../Assests/Dashboard/vendery.svg";
+import DataIcons from "../../Assests/Dashboard/importy.svg";
+import CouIcon from "../../Assests/Dashboard/coupony.svg";
+import PurIcon from "../../Assests/Dashboard/purchaseY.svg";
+import SettingIcon from "../../Assests/Dashboard/settingY.svg";
+import ResportIcons from "../../Assests/Dashboard/reports.svg";
 
 
-
-
-
-
-const SideMenu = ({ isMenuOpen, setIsMenuToggle }) => {
-  const [activeItem, setActiveItem] = useState(null); // New state variable
-  const navigate = useNavigate();
-
-  const handleItemClick = (id) => {
-    setActiveItem(id); // Update the active item
-  };
+  const SideMenu = ({ isMenuOpen, setIsMenuToggle }) => {
+    const [activeItem, setActiveItem] = useState(1); // Set Dashboard as the default active item
+    const navigate = useNavigate();
+  
+    const handleItemClick = (id, link) => {
+      setActiveItem(id);
+      navigate(link);
+    };
+  
 
   return (
     <>
@@ -38,41 +44,54 @@ const SideMenu = ({ isMenuOpen, setIsMenuToggle }) => {
         style={isMenuOpen ? { width: "16rem" } : { width: "6rem" }}
       >
         {/* Left Side Menu */}
-        <div className="flex-1 bg-black text-white p-4">
+        <div className="flex-1 bg-[#253338] text-[#9E9E9E] p-4">
           {isMenuOpen
             ? menuItems.map((item) => (
-                <div key={item.id} className="mb-4 text-base">
+                <div
+                  key={item.id}
+                  className={`mb-4 text-base ${
+                    activeItem === item.id ? "active" : ""
+                  }`}
+                >
                   {item.dropdownItems ? (
                     <DropdownMenuItem item={item} />
                   ) : (
                     <div
-                      className={`flex items-center ${
-                        activeItem === item.id
-                          ? "text-[#FFC400]"
-                          : "text-gray-400 hover-text-yellow"
+                    className={`flex items-center ${
+                      activeItem === item.id ? "bg-[#414F54]" : ""
+                        ? "text-[#FFC400] active:bg-[#414F54] hover:bg-[#414F54] px-0"
+                        : ""
+                    }`}
+                  >
+                    {activeItem === item.id ? item.activeIcon : item.icon}
+                    <Link
+                      onClick={() => handleItemClick(item.id)}
+                      className={`ml-2 menu-item text-[18px] Admin_std ${
+                        activeItem === item.id ? "bg-[#414F54]" : ""
                       }`}
+                      to={item.link}
                     >
-                      {activeItem === item.id ? item.activeIcon : item.icon}
-                      <Link
-                        onClick={() => handleItemClick(item.id)}
-                        className="ml-2 menu-item text-[16px] Admin_std"
-                        to={item.link}
-                      >
-                        {item.text}
-                      </Link>
-                    </div>
+                      {item.text}
+                    </Link>
+                  </div>
                   )}
                 </div>
               ))
             : menuItems.map((item) => (
-                <div key={item.id} className="mb-4 text-base cursor-pointer">
+                <div
+                  key={item.id}
+                  
+                  className={`mb-4 text-base cursor-pointer ${
+                    activeItem === item.id ? "active" : ""
+                  }`}
+                >
                   {item.dropdownItems ? (
                     <DropdownMenuItem item={item} />
                   ) : (
                     <div
                       className={`flex flex-col items-center ${
-                        activeItem === item.id
-                          ? "text-[#FFC400]"
+                        activeItem === item.id 
+                          ? "text-[#FFC400] active"
                           : "text-gray-400 hover-text-yellow"
                       }`}
                       onClick={() => {
@@ -86,8 +105,6 @@ const SideMenu = ({ isMenuOpen, setIsMenuToggle }) => {
                 </div>
               ))}
         </div>
-
-        {/* Right Dashboard Menu */}
       </div>
     </>
   );
@@ -133,26 +150,30 @@ const menuItems = [
   {
     id: 1,
     icon: (
-      <img src={DashIcon} alt="Dashboard" className="h-6 w-6 mt-4 mb-4 group-hover:fill-black" />
+      <img
+        src={DashIcon}
+        alt="Dashboard"
+        className="h-6 w-10 mt-4 mb-4 "
+      />
     ),
     activeIcon: (
-      <img src={DashboardIcon} alt="Dashboard" className="h-6 w-6 mt-4 mb-4 group-hover:fill-black" />
+      <img
+        src={DashboardIcon}
+        alt="Dashboard"
+        className="h-6 w-10 mt-4 mb-4"
+      />
     ),
     text: "Dashboard",
     link: "/dashboard",
   },
-  // ... (other menu items)
-
-
-
 
   {
     id: 2,
     icon: (
-      <img src={ShoppingCartIcon} alt="Order" className="h-6 w-6 mt-4 mb-4" />
+      <img src={ShoppingCartIcon} alt="Order" className="h-6 w-10 mt-4 mb-4" />
     ),
     activeIcon: (
-      <img src={OrderYellow} alt="Dashboard" className="h-6 w-6 mt-4 mb-4 " />
+      <img src={OrderYellow} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
     ),
     text: "Order",
     link: "/order",
@@ -160,10 +181,10 @@ const menuItems = [
   {
     id: 3,
     icon: (
-      <img src={CategoryIcon} alt="Category" className="h-6 w-6 mt-4 mb-4" />
+      <img src={CategoryIcon} alt="Category" className="h-6 w-10 mt-4 mb-4" />
     ),
     activeIcon: (
-      <img src={CatIcon} alt="Dashboard" className="h-6 w-6 mt-4 mb-4 " />
+      <img src={CatIcon} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
     ),
     text: "Category",
     link: "/category",
@@ -171,7 +192,10 @@ const menuItems = [
   {
     id: 4,
     icon: (
-      <img src={ProductIcon} alt="Products" className="h-6 w-6 mt-4 mb-4" />
+      <img src={ProductIcon} alt="Products" className="h-6 w-10 mt-4 mb-4" />
+    ),
+    activeIcon: (
+      <img src={ProdIcon} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
     ),
     text: "Products",
     link: "/products",
@@ -182,7 +206,14 @@ const menuItems = [
       <img
         src={AttributesIcon}
         alt="Attributes"
-        className="h-6 w-6 mt-4 mb-4"
+        className="h-6 w-10 mt-4 mb-4"
+      />
+    ),
+    activeIcon: (
+      <img
+        src={AtriIcon}
+        alt="atributes"
+        className="h-6 w-10 mt-4 mb-4"
       />
     ),
     text: "Attributes",
@@ -194,8 +225,11 @@ const menuItems = [
       <img
         src={PurchaseIcon}
         alt="Purchase Data"
-        className="h-6 w-6 mt-4 mb-4"
+        className="h-6 w-10 mt-4 mb-4"
       />
+    ),
+    activeIcon: (
+      <img src={PurIcon} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
     ),
     text: "Purchase Orders",
     link: "/purchase-data",
@@ -203,35 +237,62 @@ const menuItems = [
   {
     id: 7,
     icon: (
-      <img src={DataIcon} alt="Import Data" className="h-6 w-6 mt-4 mb-4" />
+      <img src={VenderIcon} alt="Import Data" className="h-6 w-10 mt-4 mb-4" />
+    ),
+
+    text: "Import Data",
+    link: "/import-data",
+    activeIcon: (
+      <img src={DataIcons} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
     ),
     text: "Import Data",
     link: "/import-data",
   },
   {
-    id: 4,
-    icon: <img src={CouponIcon} alt="Coupons" className="h-6 w-6 mt-4 mb-4" />,
+    id: 6,
+    icon: <img src={CouponIcon} alt="Coupons" className="h-6 w-10 mt-4 mb-4" />,
+    text: "Coupons",
+    link: "/coupons",
+    activeIcon: (
+      <img src={CouIcon} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
+    ),
     text: "Coupons",
     link: "/coupons",
   },
   {
     id: 9,
-    icon: <img src={VenderIcon} alt="Vendors" className="h-6 w-6 mt-4 mb-4" />,
+    icon: <img src={VenIcon} alt="Vendors" className="h-6 w-10 mt-4 mb-4" />,
+    text: "Vendors",
+    link: "/vendors",
+    activeIcon: (
+      <img src={VenIcons} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
+    ),
     text: "Vendors",
     link: "/vendors",
   },
   {
     id: 10,
     icon: (
-      <img src={TimesheetIcon} alt="Timesheet" className="h-6 w-6 mt-4 mb-4" />
+      <img src={TimesheetIcon} alt="Timesheet" className="h-6 w-10 mt-4 mb-4" />
+    ),
+    text: "Timesheet",
+    link: "/timesheet",
+    activeIcon: (
+      <img
+        src={TimesheetsIcon}
+        alt="Dashboard"
+        className="h-6 w-10 mt-4 mb-4 "
+      />
     ),
     text: "Timesheet",
     link: "/timesheet",
   },
-
   {
     id: 11,
-    icon: <img src={StoreIcon} alt="store" className="h-6 w-6 mt-4 mb-4" />,
+    icon: <img src={StoreIcon} alt="store" className="h-6 w-10 mt-4 mb-4" />,
+    activeIcon: (
+      <img src={SettingIcon} alt="active store" className="h-6 w-10 mt-4 mb-4" />
+    ),
     text: "Store Settings",
     className: "flex items-center gap-2",
     dropdownItems: [
@@ -241,7 +302,14 @@ const menuItems = [
   },
   {
     id: 12,
-    icon: <img src={ReportIcon} alt="Report" className="h-6 w-6 mt- mb-4" />,
+    icon: <img src={ReportIcon} alt="Report" className="h-6 w-10 mt- mb-4" />,
+    activeIcon: (
+      <img
+        src={ResportIcons}
+        alt="active report"
+        className="h-6 w-10 mt- mb-4"
+      />
+    ),
     text: "Reporting",
     className: "flex items-center gap-2",
     dropdownItems: [

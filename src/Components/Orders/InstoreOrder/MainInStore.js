@@ -16,20 +16,22 @@ const MainInStore = () => {
   const renderInStoreContent = () => {
     if (activeTab === "online") {
       return (
-        <div className="">
-          <div className="">
+      <>
             <FilterEmp />
-          </div>
-          <div className=" mt-24">
+       
+          <div className="mt-16">
+            </div>
             <DateRange />
-          </div>
-          <div className="">
+            <div className=" mt-8">
+            </div>
+          
             <ContentList />
-          </div>
-          <div className="">
+            <div className=" mt-8">
+            </div>
+          
             <TableViewData />
-          </div>
-        </div>
+            </>
+      
       );
     } else if (activeTab === "offline") {
       return (
@@ -58,7 +60,7 @@ const MainInStore = () => {
     <>
     <div className="mx-8 my-2">
       <div
-        className="box-content h-[300px] w-70 p-4 border-4 border-white bg-white rounded-xl opacity-100 mt-9 mx-12"
+        className="box-content h-[300px] w-70 p-4 border-4 border-white bg-white rounded-xl opacity-100 mt-9 mx-8"
         style={{ boxShadow: "0px 3px 6px #0000001F" }}
       >
         <div className="mb-6">

@@ -6,9 +6,11 @@ import SellItems from "./SellItems";
 const DashboardMain = () => {
   return (
     <div>
-      <Welcome />
-      <NetSales />
-      <SellItems />
+      <div className="">
+      {/* <Welcome /> */}
+      {/* <NetSales /> */}
+      {/* <SellItems /> */}
+    </div>
     </div>
   );
 };
