@@ -44,7 +44,7 @@ import ResportIcons from "../../Assests/Dashboard/reports.svg";
         style={isMenuOpen ? { width: "16rem" } : { width: "6rem" }}
       >
         {/* Left Side Menu */}
-        <div className="flex-1 bg-[#253338] text-[#9E9E9E] p-4">
+        <div className="flex-1 bg-[#253338] text-[#9E9E9E]">
           {isMenuOpen
             ? menuItems.map((item) => (
                 <div
@@ -58,7 +58,7 @@ import ResportIcons from "../../Assests/Dashboard/reports.svg";
                   ) : (
                     <div
                     className={`flex items-center ${
-                      activeItem === item.id ? "bg-[#414F54]" : ""
+                      activeItem === item.id ? "bg-[#414F54] text-[#FFC400]" : ""
                         ? "text-[#FFC400] active:bg-[#414F54] hover:bg-[#414F54] px-0"
                         : ""
                     }`}
@@ -249,7 +249,7 @@ const menuItems = [
     link: "/import-data",
   },
   {
-    id: 6,
+    id: 8,
     icon: <img src={CouponIcon} alt="Coupons" className="h-6 w-10 mt-4 mb-4" />,
     text: "Coupons",
     link: "/coupons",

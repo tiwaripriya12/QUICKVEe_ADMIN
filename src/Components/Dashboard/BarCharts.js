@@ -72,16 +72,16 @@ const BarCharts = () => {
   return (
     <div className="w-full">
       <div className="flex justify-between items-center mb-10">
-        <h2 className="text-[18px] font-normal opacity-100 text-black ml-4 admin_medium">
+        <h2 className="text-[20px] font-normal opacity-100 text-black ml-4 admin_medium">
           Hourly Net Sales
         </h2>
         
         <div className="flex items-center space-x-4 mt-4">
           {/* Add your filter component here */}
           <select
-            className="border-2 border-customColor rounded px-8 py-2 mr-7 bg-white text-blue-500 text-[12px] Admin_std"
+            className="border-2 border-customColor rounded px-8 py-2 mr-7 bg-white text-blue-500 text-[16px] Admin_std"
             value={selectedFilter}
-            onChange={handleFilterChange}
+            onChange={handleFilterChange} 
           >
             <option value="day">Days</option>
             <option value="month">Months</option>

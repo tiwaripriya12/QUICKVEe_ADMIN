@@ -27,6 +27,10 @@
   font-family: adminstdbook;
   src: url(./Assests/Fonts/circulur-std-book.TTF);
 }
+@font-face {
+  font-family: admin_std_medium;
+  src: url(./Assests//Fonts/FontsFree-Net-Circular-Std-Medium.ttf);
+}
 
 .Admin_bold {
   font-family: adminbold !important;
@@ -44,6 +48,9 @@
   font-family: adminstdbook !important;
 }
 
+.adminstd_medium {
+  font-family: admin_std_medium !important;
+}
 .sales {
   font-weight: normal !important;
 }
@@ -119,4 +126,10 @@
 
 .menu-item:hover {
   color: #FFC400; /* Set the hover color */
+}
+
+.vl {
+  border-left: 2px solid #0000001F;
+  height: 80px;
+  margin-top: 13px;
 }

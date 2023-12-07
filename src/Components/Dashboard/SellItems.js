@@ -1,13 +1,13 @@
 import React from "react";
-import { FaAngleRight } from "react-icons/fa";
+
 import { ProgressBar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import RightIcon from "../../Assests/Dashboard/Right.svg"
-
+import RightIcon from "../../Assests/Dashboard/Right.svg";
 // import ProgressBar from "@ramonak/react-progress-bar";
 
 const SellItems = () => {
-  const progressValue = 60; // Assuming the first progress bar value is 60%
+  const progressValue = 50; // Set your progress values accordingly
+  const progressValue1 = 75; // Set your second progress value
 
   const column1Data = [
     { product: "T2 3000-4500 Single 19.99", price: "$179.18" },
@@ -18,45 +18,41 @@ const SellItems = () => {
   ];
 
   return (
-    <div className="mx-2 py-7 h-[100] my-4">
+    <div className="mx-10 my-5">
       <div className="">
         <div className="container mx-auto">
-          <div className="grid grid-cols-2 gap-4 ">
-            <div
-              className="gap-2 py-4 cursor-pointer bg-gray rounded-2xl opacity bg-white mx-4"
-              style={{ boxShadow: "0px 3px 6px #0000001F" }}
-            >
-              <div className="flex items-center gap-2 py-4 cursor-pointer">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mx-auto sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto">
+            <div className="gap-2 py-4 cursor-pointer bg-grayopacity bg-white px-0 mt-4 mx-0 shadow-md rounded-lg opacity-100 h-auto">
+              <div className="flex items-center gap-2 py-1 cursor-pointer">
                 <div className="flex items-center gap-2">
                   <div>
                     <Link
                       to="/toptraders"
-                      className="py-2 mx-4 text-[18px] admin_medium flex "
+                      className="py-2 mx-4 text-[20px] admin_medium flex items-center"
                     >
                       Top Selling Items
                       <div className="ml-3">
-                      <img src={RightIcon}  alt="down" className="w-9 h-15 " /></div>
+                        <img src={RightIcon} alt="down" className="w-8" />{" "}
+                        
+                      </div>
                     </Link>
                   </div>
                 </div>
               </div>
-              <table className="min-w-full bg-white border rounded-lg">
-                <thead>
-                  {/* <tr className="bg-white uppercase text-[14px] leading-normal">
-                    <th className="py-3 px-6 text-left">Product</th>
-                    <th className="py-3 px-6 text-left">Price</th>
-                  </tr> */}
-                </thead>
+              <table className="w-full bg-white rounded-lg">
+                <thead></thead>
                 <tbody className="text-black Admin_std bg-[#F5F9FF]">
                   {column1Data.map((item, index) => (
                     <tr
                       key={index}
                       className={
-                        (index % 2 === 0 ? "bg-[#F5F9FF ]" : "bg-white") +
-                        " border-b"
+                        (index % 2 === 0 ? "bg-[#F5F9FF ]" : "bg-white") + ""
                       }
                     >
-                      <td className="py-3 px-6 text-left whitespace-nowrap text-[14px]">
+                      <td
+                        colSpan="2"
+                        className="py-3 px-6 text-left text-[14px] w-full"
+                      >
                         {item.product}
                       </td>
                       <td className="py-3 px-6 text-left text-[14px]">
@@ -67,61 +63,31 @@ const SellItems = () => {
                 </tbody>
               </table>
             </div>
-            <div
-              className="gap-2 py-4 cursor-pointer bg-gray rounded-2xl opacity bg-white mx-4"
-              style={{ boxShadow: "0px 3px 6px #0000001F" }}
-            >
-              <table className="min-w-full bg-white mt-2">
-                <thead>
+            <div className="gap-2 py-4 cursor-pointer bg-grayopacity bg-white px-0 mt-4 mx-0 shadow-md rounded-lg opacity-100 h-auto">
+              <table className="w-full bg-white mt-2">
+                <thead className="border-b-2">
                   <tr className="bg-white text-black  text-base leading-normal">
                     <div className="flex items-center gap-2">
-                      
-                      <Link
-                      to="/toptraders"
-                      className="py-2 mx-4 text-[18px] admin_medium flex "
-                    >
-                     Sales Tenders
-                      <div className="ml-3">
-                      <img src={RightIcon}  alt="down" className="w-9 h-15 " />
-                     </div>
-                    </Link>
-                     
+                      <div>
+                        <Link
+                          to="/toptraders"
+                          className="py-2 mx-4 text-[20px] admin_medium flex items-center"
+                        >
+                          Sales Tenders
+                          <div className="ml-3">
+                            <img src={RightIcon} alt="down" className="w-8" />{" "}
+                            {/* Adjust width and height as needed */}
+                          </div>
+                        </Link>
+                      </div>
                     </div>
-                    <th class="py-2 text-[18px] admin_medium sales">
+
+                    <th class="py-2 text-[20px] admin_medium sales">
                       Total: 578.92
                     </th>
                   </tr>
-                  <div class="mt-2 bg-[#000] border-b-2 w-[160%] mb-4"></div>
+                  {/* <div class="mt-2 bg-[#000] border-b-2 w-[160%] mb-4"></div> */}
                 </thead>
-                <tbody className="text-gray-600 text-sm font-light ">
-                  <tr>
-                    <td colSpan="2">
-                      <div className="text-[18px] font-normal Admin_std text-[#707070] leading-3 mt-8 ml-6">
-                        External Credit
-                      </div>
-                      <div className="w-96 bg-[#438AFF] rounded h-8 overflow-hidden my-3 ml-6">
-                        {/* First Progress Bar */}
-                        <ProgressBar
-                          completed={progressValue}
-                          bgColor="#10B981"
-                          height="100%"
-                          borderRadius="0px"
-                        />
-                      </div>
-                      <div className="text-[18px] font-normal Admin_std text-[#707070] leading-3 mt-2 ml-6">
-                        Cash
-                      </div>
-                      <div className="w-64 bg-[#438AFF] rounded h-8 overflow-hidden my-3 ml-6">
-                        <ProgressBar
-                          // completed={progressValue1}
-                          bgColor="#10B981"
-                          height="100%"
-                          borderRadius="0px"
-                        />
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
               </table>
             </div>
           </div>
