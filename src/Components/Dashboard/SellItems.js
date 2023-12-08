@@ -1,9 +1,9 @@
 import React from "react";
 
-import { ProgressBar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import RightIcon from "../../Assests/Dashboard/Right.svg";
 // import ProgressBar from "@ramonak/react-progress-bar";
+import ProgressBar from "./ProgressBar";
 
 const SellItems = () => {
   const progressValue = 50; // Set your progress values accordingly
@@ -88,6 +88,9 @@ const SellItems = () => {
                   </tr>
                   {/* <div class="mt-2 bg-[#000] border-b-2 w-[160%] mb-4"></div> */}
                 </thead>
+                <tbody>
+                 {/* <ProgressBar /> */}
+                </tbody>
               </table>
             </div>
           </div>

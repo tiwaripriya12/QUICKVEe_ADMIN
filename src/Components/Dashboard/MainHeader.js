@@ -16,7 +16,7 @@ const MainHeader = () => {
                   <thead>
                     <tr>
                       <th className="">
-                        <div className="text-[#707070]  text-[18px] Admin_std font-normal">Gross salse</div>
+                        <div className="text-[#707070]  lg:text-[18px] Admin_std font-normal">Gross salse</div>
                         <div className="text-black text-[40px] font-normal  Admin_std mt-1 mb-1">462.00</div>
                        
                         

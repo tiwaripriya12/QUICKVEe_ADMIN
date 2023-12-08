@@ -49,7 +49,7 @@ const dataByMonth = [
 ];
 
 const BarCharts = () => {
-  const [selectedFilter, setSelectedFilter] = useState("day");
+  const [selectedFilter, setSelectedFilter] = useState("month");
 
   const handleFilterChange = (e) => {
     setSelectedFilter(e.target.value);
