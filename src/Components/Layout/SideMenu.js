@@ -111,18 +111,16 @@ import ResportIcons from "../../Assests/Dashboard/reports.svg";
 };
 
 // Dropdown menu item component
-const DropdownMenuItem = ({ item }) => {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
-
+const DropdownMenuItem = ({ item, isDropdownOpen, setIsDropdownOpen }) => {
   const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
     <div className="flex items-center">
       {item.icon}
       <p
-        className="ml-2 cursor-pointer menu-item text-gray-400  "
+        className="ml-2 cursor-pointer menu-item text-gray-400"
         onClick={toggleDropdown}
       >
         {item.text}
@@ -133,7 +131,7 @@ const DropdownMenuItem = ({ item }) => {
           {item.dropdownItems.map((dropdownItem) => (
             <p
               key={dropdownItem.id}
-              className="flex items-center submenu-item text-gray-400"
+              className="flex items-center submenu-item text-gray-400 none"
             >
               {dropdownItem.text}
               <FaChevronDown className="ml-1" />
@@ -144,6 +142,7 @@ const DropdownMenuItem = ({ item }) => {
     </div>
   );
 };
+
 
 // Define menu items with icons and text
 const menuItems = [

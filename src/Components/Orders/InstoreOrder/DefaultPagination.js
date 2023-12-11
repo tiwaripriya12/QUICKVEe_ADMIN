@@ -49,7 +49,7 @@ export function DefaultPagination() {
 
 
   return (
-    <div className="flex flex-col items-start gap-1 ">
+    <div className="flex flex-col items-start gap-1 pb-7">
     <div className="flex items-center gap-4 ml-auto">
     <div className="flex px-2 py-2 text-[14px] tracking-tight">Show
       <div className="custom-button px-4 py-2">{active}</div>

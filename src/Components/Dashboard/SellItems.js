@@ -6,8 +6,8 @@ import RightIcon from "../../Assests/Dashboard/Right.svg";
 import ProgressBar from "./ProgressBar";
 
 const SellItems = () => {
-  const progressValue = 50; // Set your progress values accordingly
-  const progressValue1 = 75; // Set your second progress value
+  const progressValue = '$446.58'; // Set your progress values accordingly
+  const progressValue1 = '$132.34'; // Set your second progress value
 
   const column1Data = [
     { product: "T2 3000-4500 Single 19.99", price: "$179.18" },
@@ -88,8 +88,32 @@ const SellItems = () => {
                   </tr>
                   {/* <div class="mt-2 bg-[#000] border-b-2 w-[160%] mb-4"></div> */}
                 </thead>
-                <tbody>
-                 {/* <ProgressBar /> */}
+                <tbody className="text-gray-600 text-sm font-light ">
+                <tr>
+      <td colSpan="2">
+        <div className="text-[18px] font-normal Admin_std text-[#707070] leading-3 mt-8 ml-6">
+          External Credit
+        </div>
+        <div className="w-[95%] bg-[#438AFF] rounded h-12 overflow-hidden my-3 mx-4 px-3">
+          {/* First Progress Bar */}
+           {/* <ProgressBar
+            now={progressValue}
+            style={{ backgroundColor: '#fff', borderRadius: '8px' }}
+          />  */}
+        </div>
+        <div className="text-[18px] font-normal Admin_std text-[#707070] leading-3 mt-2 ml-6">
+          Cash
+        </div>
+        <div className="w-96 bg-[#438AFF] rounded h-12 overflow-hidden my-3 ml-6">
+          {/* Second Progress Bar */}
+          {/* <ProgressBar
+            now={progressValue1}
+            style={{ backgroundColor: '#438AFF', borderRadius: '8px' }}
+          /> */}
+        </div>
+      </td>
+    </tr>
+                 
                 </tbody>
               </table>
             </div>

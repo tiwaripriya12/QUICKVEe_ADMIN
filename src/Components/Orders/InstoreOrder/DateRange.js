@@ -38,19 +38,16 @@ const DateRange = () => {
 
   return (
     <>
-      <div className="ml-[-1.2rem] mr-[0.5rem] my-2">
-        <div
-          className="box-content h-[250px] w-full p-4 border-4 border-white bg-white rounded-xl opacity-100"
-          style={{ boxShadow: "0px 3px 6px #0000001F" }}
-        >
+      <div className="ml-[-4.2rem] mr-[-4.2rem] my-2">
+        <div className="bg-white px-8 py-4 mt-4 mx-10 shadow-md rounded-lg opacity-100 lg:h-[230px] sm:h[500px] md:h-[450px]">
           <div className="flex flex-col sm:flex-row mb-9">
             <div className="sm:w-full">
               <h3 className="text-black text-[18px] font-semibold leading-none mt-2">
                 Date Range
               </h3>
             </div>
-            <div className="w-full mt-4 sm:mt-0">
-              <div className="w-4/5 flex flex-row text-gray-600 space-x-4 py-2 bg-[#F5F5F5] rounded ml-8">
+            <div className="w-full mt-4 sm:mt-0 sm:w-full">
+              <div className="flex flex-row text-gray-600 space-x-4 py-2 bg-[#F5F5F5] rounded ml-28 lg:text-[18px] Admin_std sm:text-xs md:text-sm">
                 {["Today", "Yesterday", "Last 7 Days", "Last 30 days"].map(
                   (option) => (
                     <div
@@ -72,7 +69,7 @@ const DateRange = () => {
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-start mt-4">
             {/* Start Date */}
             <div className="relative">
-              <div className="mb-2">Start Date</div>
+              <div className="mb-2 text-[#818181]  Admin_std">Start Date</div>
               <div className="w-full">
                 <DatePicker
                   selected={startDate}
@@ -85,7 +82,7 @@ const DateRange = () => {
                   timeIntervals={15}
                   timeCaption="Time"
                   dateFormat="MMMM d, yyyy h:mm aa"
-                  className="border border-blue-500 rounded px-3 py-2 pr-10 mt-1 focus:outline-none focus:border-blue-500 w-[350px]"
+                  className="border border-blue-500 rounded px-3 py-2 pr-10 mt-1 focus:outline-none focus:border-blue-500 w-[350px]  Admin_std"
                   ref={startDateRef}
                 />
                 <span
@@ -99,7 +96,7 @@ const DateRange = () => {
 
             {/* End Date */}
             <div className="relative mt-4 sm:mt-0">
-              <div className="mb-2">End Date</div>
+              <div className="mb-2 text-[#818181] Admin_std">End Date</div>
               <DatePicker
                 selected={endDate}
                 onChange={(date) => setEndDate(date)}
@@ -112,27 +109,27 @@ const DateRange = () => {
                 timeIntervals={15}
                 timeCaption="Time"
                 dateFormat="MMMM d, yyyy h:mm aa"
-                className="border border-blue-500 rounded px-3 py-2 pr-10 mt-1 focus:outline-none focus:border-blue-500 w-[350px]"
+                className="border border-blue-500 rounded px-3 py-2 pr-10 mt-1 focus:outline-none focus:border-blue-500 w-[350px]  Admin_std"
                 ref={endDateRef}
               />
               <span
                 className="absolute right-3 top-14 transform -translate-y-1/2 text-gray-400 cursor-pointer"
                 onClick={handleEndDateIconClick}
               >
-                <FiCalendar className="text-black" />
+                <FiCalendar className="text-black mr-32" />
               </span>
+              <span>
+              <button
+                onClick={handleSearch}
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline self-start mt-6 sm:mt-0 ml-6"
+              >
+                Search
+              </button>
+              </span>
+             
             </div>
 
-            <div className="flex items-center mt-4">
-  {/* Search Button */}
-  {/* <button
-    onClick={handleSearch}
-    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline self-start mt-4 sm:mt-0"
-  >
-    Search
-  </button> */}
-</div>
-
+            {/* Search Button */}
           </div>
         </div>
       </div>

@@ -36,11 +36,11 @@ const Welcome = () => {
               Welcome Malik Saleh
             </div>
             <div
-              onClick={() => setVisibleCalendar(true)}
-              className="lg:text-[28px] text-[#000000] adminstd_medium opacity-100 leading-tight font-normal sm:text-sm md:text-sm"
-            >
-              Oct 4, 2023 - Oct 4, 2023
-            </div>
+  onClick={() => setVisibleCalendar(prevState => !prevState)}
+  className={`lg:text-[28px] text-[#000000] adminstd_medium opacity-100 leading-tight font-normal sm:text-sm md:text-sm ${visibleCalendar ? 'active' : ''}`}
+>
+  Oct 4, 2023 - Oct 4, 2023
+</div>
             <div
               className={visibleCalendar ? "dataCalender" : "nonedatacalender"}
             >

@@ -57,7 +57,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }) {
           <div className="relative">
       {/* Button to toggle dropdown */}
       <div
-        className="flex items-center ml-6 px-3 py-1 text-black text-[20px] admin_medium cursor-pointer"
+        className="flex items-center ml-6 px-3 py-1 text-black lg:text-[20px] admin_medium cursor-pointer sm:text-xs md:text-sm"
         onClick={handleDropdownToggle}
       >
         Vape Store
@@ -78,7 +78,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }) {
         </div>
       )}
     </div>
-    <div className="flex items-center text-[20px] text-black ml-auto">
+    <div className="flex items-center lg:text-[20px] text-black ml-auto sm:text-xs md:text-sm">
   {/* Download App section */}
   <div className="ml-12 flex items-center">
     <img src={DownlIcon} alt="icon" className="ml-2" />

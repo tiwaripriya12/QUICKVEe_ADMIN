@@ -1,224 +1,315 @@
 import { useState } from "react";
-import { DefaultPagination } from "./DefaultPagination";
 
-
+import Pagination from "react-js-pagination";
 
 const TableViewData = () => {
-  const [selectedStatus, setSelectedStatus] = useState(""); // State to hold selected status filter
+  const [activePage, setActivePage] = useState(1);
+  const entriesPerPage = 10;
 
   const tableData = [
     {
       id: 1,
-      customer: "John Doe",
-      order: "64D249392454E",
-      amount: "$216.29",
-      status: "Accepted",
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "Pickup"],
+      amount: ["$216.29", "Cash-Pending"],
+      status: "Processing",
     },
     {
       id: 2,
-      customer: "Jane Smith",
-      order: "64D249392454E",
-      amount: "$216.29",
-      status: "Rejected",
-    },
-    {
-      id: 3,
-      customer: "Alice Johnson",
-      order: "64D249392454E",
-      amount: "$216.29",
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "Pickup"],
+      amount: ["$216.29", "Cash-Pending"],
       status: "Processing",
     },
+
+    {
+      id: 3,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
+      status: "Processing",
+    },
+
     {
       id: 4,
-      customer: "Brian Cooper",
-      order: "64D249392454E",
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
+      status: "Processing",
+    },
+    {
+      id: 5,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
+      status: "Processing",
+    },
+    {
+      id: 6,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
+      status: "Processing",
+    },
+    {
+      id: 7,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
+      status: "Processing",
+    },
+    {
+      id: 8,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
+      status: "Processing",
+    },
+    {
+      id: 9,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
+      status: "Processing",
+    },
+    {
+      id: 10,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
+      status: "Processing",
+    },
+    {
+      id: 11,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
+      status: "Processing",
+    },
+    {
+      id: 12,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
       amount: "$216.29",
       status: "Processing",
     },
     {
-      id: 3,
-      customer: "Brian Cooper",
-      order: "64D249392454E",
-      amount: "$216.29",
+      id: 13,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
       status: "Processing",
     },
     {
-      id: 3,
-      customer: "Brian Cooper",
-      order: "64D249392454E",
-      amount: "$216.29",
+      id: 14,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
       status: "Processing",
     },
     {
-      id: 3,
-      customer: "Brian Cooper",
-      order: "64D249392454E",
-      amount: "$216.29",
+      id: 15,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
       status: "Processing",
     },
     {
-      id: 3,
-      customer: "Brian Cooper",
-      order: "64D249392454E",
-      amount: "$216.29",
+      id: 16,
+      customer: [
+        "Brian Cooper",
+        "Existing Customer",
+        "876 556 7889",
+        "vijay@imerchantech.com",
+      ],
+      order: ["64D249392454E", "2023-08-08 06:14:51", "pickup"],
+      amount: ["$216.29", "Cash-Pending"],
       status: "Processing",
     },
-    {
-      id: 3,
-      customer: "Brian Cooper",
-      order: "64D249392454E",
-      amount: "$216.29",
-      status: "Processing",
-    },
-    {
-      id: 3,
-      customer: "Brian Cooper",
-      order: "64D249392454E",
-      amount: "$216.29",
-      status: "Processing",
-    },
-    {
-      id: 3,
-      customer: "Brian Cooper",
-      order: "64D249392454E",
-      amount: "$216.29",
-      status: "Processing",
-    },
-
   ];
 
-  const filterByStatus = (status) => {
-    setSelectedStatus(status);
+  if (!tableData) {
+    return null; // or handle the case when tableData is undefined
+  }
 
-    // const filteredData = tableData.filter((row) => row.status === status);
+  // Calculate the start and end index for the current page
+  const startIndex = (activePage - 1) * entriesPerPage;
+  const endIndex = startIndex + entriesPerPage;
+
+  const handlePageChange = (pageNumber) => {
+    setActivePage(pageNumber);
   };
 
   return (
     <>
-       <div className="ml-[-1.2rem] mr-[-1.2rem] my-2">
-        <div
-          className="box-content h-auto w-70 p-4 border-4 border-white bg-white rounded-2xl opacity-100"
-          style={{ boxShadow: "0px 3px 6px #0000001F" }}
-        >
-          <div className="">
-           <DefaultPagination />
-         
-          </div>
-          <div className="flex justify-end mb-4">
-            <div className="relative inline-block text-left">
-              {/* <div>
-                <span className="rounded-md shadow-sm">
-                  <button
-                    type="button"
-                    className="inline-flex justify-center w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 focus:outline-none"
-                    id="options-menu"
-                    aria-haspopup="true"
-                    aria-expanded="true"
-                  >
-                    Filter by Status
-                    <svg
-                      className="-mr-1 ml-2 h-5 w-5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 12a2 2 0 100-4 2 2 0 000 4z"
-                        clipRule="evenodd"
-                      />
-                      <path
-                        fillRule="evenodd"
-                        d="M4.293 8.293a1 1 0 011.414-1.414L10 10.086l4.293-4.293a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 01-1.414 1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </span>
-              </div> */}
-              {/* Dropdown for status filter */}
-              {selectedStatus && (
-                <div className="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                  <div
-                    className="py-1"
-                    role="menu"
-                    aria-orientation="vertical"
-                    aria-labelledby="options-menu"
-                  >
-                    <button
-                      onClick={() => filterByStatus("")}
-                      className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                      role="menuitem"
-                    >
-                      All
-                    </button>
-                    <button
-                      onClick={() => filterByStatus("Accepted")}
-                      className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                      role="menuitem"
-                    >
-                      Accepted
-                    </button>
-                    <button
-                      onClick={() => filterByStatus("Rejected")}
-                      className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                      role="menuitem"
-                    >
-                      Rejected
-                    </button>
-                    <button
-                      onClick={() => filterByStatus("Processing")}
-                      className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                      role="menuitem"
-                    >
-                      Processing
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+      <div className="ml-[-4.3rem] mr-[-4.3rem] my-2">
+        <div className="bg-white px-8 py-4 mt-4 mx-10 shadow-md rounded-lg opacity-100 h-auto">
 
+        <Pagination
+  activePage={activePage}
+  itemsCountPerPage={entriesPerPage}
+  totalItemsCount={tableData.length}
+  pageRangeDisplayed={5}
+  onChange={handlePageChange}
+  itemClass="page-item"
+  linkClass="page-link"
+  innerClass="pagination" // Add this class for the container
+  activeClass="active" // Class for the active page
+  activeLinkClass="active-link" // Class for the active page link
+/>
+     
           <table className="w-full">
-            <thead className="bg-black text-white">
+            <thead className="bg-[#253338] text-[#FFFFFF] w-full">
               <tr className="border-b">
-                <th className="py-3 px-6 text-left">Customer</th>
-                <th className="py-3 px-6 text-left">Order</th>
-                <th className="py-3 px-6 text-left">Amount</th>
-                <th className="py-3 px-6 text-left">Status</th>
+                <th className="py-3 px-6 text-left Admin_std">Customer</th>
+                <th className="py-3 px-6 text-left Admin_std">Order</th>
+                <th className="py-3 px-6 text-left Admin_std">Amount</th>
+                <th className="py-3 px-6 text-left Admin_std">Status</th>
                 <th className="py-3 px-6 text-left">Actions</th>
               </tr>
             </thead>
             <tbody>
               {/* Render table rows */}
-              {tableData
-                .filter(
-                  (row) => !selectedStatus || row.status === selectedStatus
-                )
-                .map((rowData) => (
-                  <tr key={rowData.id} className="border-b">
-                    <td className="py-3 px-6">{rowData.customer}</td>
-                    <td className="py-3 px-6">{rowData.order}</td>
-                    <td className="py-3 px-6">{rowData.amount}</td>
-                    <td className="py-3 px-6">
-                      {}
-                      <select className="border rounded px-8 py-2 mr-7 bg-white border-[#E1E1E1] text-[#000000] opacity-100">
-                        <option value="day">Accepted</option>
-                        <option value="month">Rejected</option>
-
-                        {/* Add more options as needed */}
-                      </select>
-                    </td>
-                    <td className="py-3 px-6 text-[#0A64F9] text-[15px] admin_medium tracking-tight opacity-100 underline">
-                      <a href={`#`} target="_blank" rel="noopener noreferrer">
-                        View Details
-                      </a>
-                    </td>
-                  </tr>
-                ))}
+              {tableData.slice(startIndex, endIndex).map((rowData) => (
+                <tr key={rowData.id} className="border-b">
+                  <td className="py-3 px-6 admin_medium">
+                    <span style={{ fontSize: "20px" }}>
+                      {rowData.customer[0]}
+                    </span>
+                    <br />
+                    <span style={{ color: "#0A64F9" }}>
+                      {rowData.customer[1]}
+                    </span>
+                    <br />
+                    <span style={{ color: "#818181" }}>
+                      {rowData.customer[2]}
+                    </span>
+                    <br />
+                    <span style={{ color: "#818181" }}>
+                      {rowData.customer[3]}
+                    </span>
+                  </td>
+                  <td className="py-3 px-6">
+                    {rowData.order[0]}
+                    <br />
+                    <span style={{ color: "#818181", fontSize: "16px" }}>
+                      {rowData.order[1]}
+                      <br />
+                      {rowData.order[2]}
+                    </span>
+                  </td>
+                  <td className="py-3 px-6">
+                    {rowData.amount[0]}
+                    <br />
+                    <span style={{ color: "#FF3939" }}>
+                      {rowData.amount[1]}
+                    </span>
+                  </td>
+                  <td className="py-3 px-6">
+                    <select className="border rounded px-8 py-2 mr-7 bg-white border-[#E1E1E1] text-[#000000] opacity-100">
+                      <option value="day">Accepted</option>
+                      <option value="month">Rejected</option>
+                      {/* Add more options as needed */}
+                    </select>
+                  </td>
+                  <td className="py-3 px-6 text-[#0A64F9] text-[15px] admin_medium tracking-tight opacity-100 underline">
+                    <a href={`#`} target="_blank" rel="noopener noreferrer">
+                      View Details
+                    </a>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
+
+          {/* Pagination */}
+          <Pagination
+  activePage={activePage}
+  itemsCountPerPage={entriesPerPage}
+  totalItemsCount={tableData.length}
+  pageRangeDisplayed={5}
+  onChange={handlePageChange}
+  itemClass="page-item"
+  linkClass="page-link"
+  innerClass="pagination" // Add this class for the container
+  activeClass="active" // Class for the active page
+  activeLinkClass="active-link" // Class for the active page link
+/>
         </div>
       </div>
     </>

@@ -194,7 +194,7 @@ select option {
  
   position: absolute;
   display: flex;
- animation: fadeCalnder  0.2s ;
+  transition: width 2s, height 4s;
  height: 500px;
  width:  90%;
  padding: 12px;
@@ -209,3 +209,44 @@ select option {
   display: none;
 }
 
+
+.days_btn{
+border-width: 1px;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.page-item {
+  list-style: none;
+  margin: 0 5px;
+}
+
+.page-link {
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #333;
+}
+
+.page-link:hover {
+  background-color: #f0f0f0;
+}
+
+.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.active-link {
+  color: #fff;
+}

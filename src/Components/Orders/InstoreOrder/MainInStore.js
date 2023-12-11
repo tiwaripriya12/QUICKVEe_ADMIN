@@ -19,7 +19,7 @@ const MainInStore = () => {
       <>
             <FilterEmp />
        
-          <div className="mt-16">
+          <div className="mt-16 w-full">
             </div>
             <DateRange />
             <div className=" mt-8">
@@ -36,20 +36,19 @@ const MainInStore = () => {
     } else if (activeTab === "offline") {
       return (
         <>
-        <div className="">
-          <div className="">
-            <FilterEmp />
-          </div>
-          <div className="mt-24">
-            <DateRange />
-          </div>
-          <div className="">
-            <ContentList />
-          </div>
-          <div className="">
-            <TableViewData />
-          </div>
-          </div>
+        <FilterEmp />
+   
+      <div className="mt-16 w-full">
+        </div>
+        <DateRange />
+        <div className=" mt-8">
+        </div>
+      
+        <ContentList />
+        <div className=" mt-8">
+        </div>
+      
+        <TableViewData />
         </>
       );
     }
@@ -60,8 +59,7 @@ const MainInStore = () => {
     <>
     <div className="mx-8 my-2">
       <div
-        className="box-content h-[300px] w-70 p-4 border-4 border-white bg-white rounded-xl opacity-100 mt-9 mx-8"
-        style={{ boxShadow: "0px 3px 6px #0000001F" }}
+        className="bg-white px-8 py-4 mt-4 mx-10 shadow-md rounded-lg opacity-100 lg:h-[350px] sm:h[500px] md:h-[450px]"
       >
         <div className="mb-6">
           <button
@@ -70,7 +68,7 @@ const MainInStore = () => {
               activeTab === "offline"
                 ? "bg-[#EBF2FF] text-[#0A64F9]"
                 : "bg-white text-[#6A6A6A]"
-            } px-12 py-2 rounded Admin_bold text-[16px]  focus:outline-none`}
+            } px-12 py-2 rounded Admin_bold text-[20px]  focus:outline-none`}
           >
             In-Store Orders
           </button>
@@ -80,11 +78,11 @@ const MainInStore = () => {
               activeTab === "online"
                 ? "bg-[#EBF2FF] text-[#0A64F9]"
                 : "bg-white text-[#6A6A6A]"
-            } px-12 py-2 rounded focus:outline-none Admin_bold text-[16px]`}
+            } px-12 py-2 rounded focus:outline-none Admin_bold text-[20px]`}
           >
             Online Orders
           </button>
-          <div className="border-t-[1px] border-b border-[#EBF2FF] bg-[#EBF2FF]"></div>
+          <div className="border-b-2 text-[#CEE0FF]"></div>
         </div>
 
         <div className="">
