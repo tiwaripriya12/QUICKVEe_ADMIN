@@ -242,11 +242,11 @@ border-width: 1px;
   background-color: #f0f0f0;
 }
 
-.active {
-  background-color: #007bff;
+.Activeclass {
+  background-color: #526167;
   color: #fff;
 }
 
-.active-link {
+.active_link_pagination {
   color: #fff;
 }

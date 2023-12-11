@@ -307,8 +307,8 @@ const TableViewData = () => {
   itemClass="page-item"
   linkClass="page-link"
   innerClass="pagination" // Add this class for the container
-  activeClass="active" // Class for the active page
-  activeLinkClass="active-link" // Class for the active page link
+  activeClass="Activeclass" // Class for the active page
+  activeLinkClass="active_link_pagination" // Class for the active page link
 />
         </div>
       </div>
