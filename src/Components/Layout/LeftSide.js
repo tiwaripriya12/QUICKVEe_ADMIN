@@ -11,6 +11,8 @@ import MainVendors from '../Vendors/MainVendors';
 import MainTimesheet from '../Timesheet/MainTimesheet';
 import MainImportData from '../ImportData/MainImportData';
 import MainProducts from '../Products/MainProducts';
+import MainStoreSetting from '../StoreSetting/MainStoreSetting';
+import Info from '../StoreSetting/SubSetting/Info';
 
 
 const LeftSide = ({visible}) => {
@@ -30,6 +32,8 @@ const LeftSide = ({visible}) => {
     { visible ==="vendors" && <MainVendors />}
     { visible ==="timesheet" && <MainTimesheet />}
     { visible ==="import-data" && <MainImportData />}
+    {/* {visible === "store-setting" && <Info />} */}
+
 
   </div>
   </div>

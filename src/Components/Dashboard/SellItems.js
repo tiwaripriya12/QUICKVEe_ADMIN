@@ -28,7 +28,7 @@ const SellItems = () => {
                   <div>
                     <Link
                       to="/toptraders"
-                      className="py-2 mx-4 text-[20px] admin_medium flex items-center"
+                      className="py-2 mx-4 lg:text-[20px] admin_medium flex items-center md:text-sm sm:text-xs"
                     >
                       Top Selling Items
                       <div className="ml-3">
@@ -71,7 +71,7 @@ const SellItems = () => {
                       <div>
                         <Link
                           to="/toptraders"
-                          className="py-2 mx-4 text-[20px] admin_medium flex items-center"
+                          className="py-2 mx-4 lg:text-[20px] admin_medium flex items-center md:text-sm sm:text-xs"
                         >
                           Sales Tenders
                           <div className="ml-3">
@@ -82,7 +82,7 @@ const SellItems = () => {
                       </div>
                     </div>
 
-                    <th class="py-2 text-[20px] admin_medium sales">
+                    <th class="py-2 lg:text-[20px] admin_medium sales md:text-sm sm:text-xs">
                       Total: 578.92
                     </th>
                   </tr>
@@ -94,7 +94,7 @@ const SellItems = () => {
         <div className="text-[18px] font-normal Admin_std text-[#707070] leading-3 mt-8 ml-6">
           External Credit
         </div>
-        <div className="w-[95%] bg-[#438AFF] rounded h-12 overflow-hidden my-3 mx-4 px-3">
+        <div className="lg:w-[95%] bg-[#438AFF] rounded h-12 overflow-hidden my-3 mx-4 px-3 md:w-[50%] sm:w-[30%]">
           {/* First Progress Bar */}
            {/* <ProgressBar
             now={progressValue}
@@ -104,7 +104,7 @@ const SellItems = () => {
         <div className="text-[18px] font-normal Admin_std text-[#707070] leading-3 mt-2 ml-6">
           Cash
         </div>
-        <div className="w-96 bg-[#438AFF] rounded h-12 overflow-hidden my-3 ml-6">
+        <div className="lg:w-96 bg-[#438AFF] rounded h-12 overflow-hidden my-3 ml-6 md:w-52 sm:w-52">
           {/* Second Progress Bar */}
           {/* <ProgressBar
             now={progressValue1}

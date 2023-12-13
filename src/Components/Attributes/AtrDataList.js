@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { FaPencilAlt } from "react-icons/fa";
  import CrossIcon from "../../Assests/Dashboard/cross.svg";
+ import SortIcon from "../../Assests/Dashboard/sort-arrows-icon.svg"
 
 const AtrDataList = () => {
   const [items, setItems] = useState([
-    { id: "1", sort: "1", title: "Color", action: <FaPencilAlt /> },
-    { id: "2", sort: "2", title: "Size", action: <FaPencilAlt /> },
-    { id: "3", sort: "3", title: "Flavor", action: <FaPencilAlt /> },
-    { id: "4", sort: "4", title: "Material", action: <FaPencilAlt /> },
-    { id: "5", sort: "5", title: "Size", action: <FaPencilAlt /> },
-    { id: "6", sort: "6", title: "Flavor", action: <FaPencilAlt /> },
+    { id: "1",sort: {SortIcon}, title: "Color", action: <FaPencilAlt /> },
+    { id: "2", sort: {SortIcon}, title: "Size", action: <FaPencilAlt /> },
+    { id: "3", sort: {SortIcon}, title: "Flavor", action: <FaPencilAlt /> },
+    { id: "4", sort: {SortIcon}, title: "Material", action: <FaPencilAlt /> },
+    { id: "5", sort: {SortIcon}, title: "Size", action: <FaPencilAlt /> },
+    { id: "6", sort: {SortIcon}, title: "Flavor", action: <FaPencilAlt /> },
     // Add more data as needed
   ]);
   const [showModal, setShowModal] = useState(false);
@@ -56,7 +57,7 @@ const AtrDataList = () => {
 
           <table className="w-full">
             <thead>
-              <tr className="bg-black text-white">
+              <tr className="bg-[#253338] text-white">
                 <th className="p-3 text-left cursor-pointer" onClick={() => sortBy("sort")}>Sort</th>
                 <th className="p-3 text-left">Title</th>
                 <th className="p-3 text-right">Action</th>
@@ -64,8 +65,8 @@ const AtrDataList = () => {
             </thead>
             <tbody>
               {items.map((item, index) => (
-                <tr key={index} className="text-black text-[16px] admin_medium border-b">
-                  <td className="p-3 h-14">{item.sort}</td>
+                <tr key={index} className="text-black text-[18px] admin_medium border-b">
+                  <td className="p-3 h-14"><img src={SortIcon}  className="h-6 w-6"/></td>
                   <td className="p-3">{item.title}</td>
                   <td className="p-3 text-right flex justify-end mt-2">{item.action}</td>
                 </tr>

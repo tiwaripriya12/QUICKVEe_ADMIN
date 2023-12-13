@@ -110,37 +110,40 @@ import ResportIcons from "../../Assests/Dashboard/reports.svg";
   );
 };
 
-// Dropdown menu item component
-const DropdownMenuItem = ({ item, isDropdownOpen, setIsDropdownOpen }) => {
-  const toggleDropdown = () => {
+const DropdownMenuItem = ({ item }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleToggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
+    <div className="relative">
     <div className="flex items-center">
       {item.icon}
       <p
         className="ml-2 cursor-pointer menu-item text-gray-400"
-        onClick={toggleDropdown}
+        onClick={handleToggleDropdown}
       >
         {item.text}
-        <FaChevronDown className="ml-1" />
+        <FaChevronDown className="quickarrow_icon" />
       </p>
-      {isDropdownOpen && (
-        <div className="ml-4 bg-white p-2">
+    </div>
+    {isDropdownOpen && (
+        <div className="absolute mt-0 bg-[#334247] p-4  shadow w-full text-center  z-10">
           {item.dropdownItems.map((dropdownItem) => (
-            <p
+            <Link
               key={dropdownItem.id}
-              className="flex items-center submenu-item text-gray-400 none"
+              to={dropdownItem.link}
+              className="flex text-center submenu-item text-gray-400 py-4"
             >
               {dropdownItem.text}
-              <FaChevronDown className="ml-1" />
-            </p>
+            </Link>
           ))}
-        </div>
-      )}
-    </div>
-  );
+      </div>
+    )}
+  </div>
+);
 };
 
 
@@ -172,7 +175,7 @@ const menuItems = [
       <img src={ShoppingCartIcon} alt="Order" className="h-6 w-10 mt-4 mb-4" />
     ),
     activeIcon: (
-      <img src={OrderYellow} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
+      <img src={OrderYellow} alt="order" className="h-6 w-10 mt-4 mb-4 " />
     ),
     text: "Order",
     link: "/order",
@@ -183,7 +186,7 @@ const menuItems = [
       <img src={CategoryIcon} alt="Category" className="h-6 w-10 mt-4 mb-4" />
     ),
     activeIcon: (
-      <img src={CatIcon} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
+      <img src={CatIcon} alt="Category" className="h-6 w-10 mt-4 mb-4 " />
     ),
     text: "Category",
     link: "/category",
@@ -194,7 +197,7 @@ const menuItems = [
       <img src={ProductIcon} alt="Products" className="h-6 w-10 mt-4 mb-4" />
     ),
     activeIcon: (
-      <img src={ProdIcon} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
+      <img src={ProdIcon} alt="Products" className="h-6 w-10 mt-4 mb-4 " />
     ),
     text: "Products",
     link: "/products",
@@ -228,7 +231,7 @@ const menuItems = [
       />
     ),
     activeIcon: (
-      <img src={PurIcon} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
+      <img src={PurIcon} alt="Purchase" className="h-6 w-10 mt-4 mb-4 " />
     ),
     text: "Purchase Orders",
     link: "/purchase-data",
@@ -242,7 +245,7 @@ const menuItems = [
     text: "Import Data",
     link: "/import-data",
     activeIcon: (
-      <img src={DataIcons} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
+      <img src={DataIcons} alt="Import" className="h-6 w-10 mt-4 mb-4 " />
     ),
     text: "Import Data",
     link: "/import-data",
@@ -253,7 +256,7 @@ const menuItems = [
     text: "Coupons",
     link: "/coupons",
     activeIcon: (
-      <img src={CouIcon} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
+      <img src={CouIcon} alt="Coupons" className="h-6 w-10 mt-4 mb-4 " />
     ),
     text: "Coupons",
     link: "/coupons",
@@ -264,7 +267,7 @@ const menuItems = [
     text: "Vendors",
     link: "/vendors",
     activeIcon: (
-      <img src={VenIcons} alt="Dashboard" className="h-6 w-10 mt-4 mb-4 " />
+      <img src={VenIcons} alt="Vendors" className="h-6 w-10 mt-4 mb-4 " />
     ),
     text: "Vendors",
     link: "/vendors",
@@ -279,7 +282,7 @@ const menuItems = [
     activeIcon: (
       <img
         src={TimesheetsIcon}
-        alt="Dashboard"
+        alt="Timesheet"
         className="h-6 w-10 mt-4 mb-4 "
       />
     ),
@@ -288,34 +291,71 @@ const menuItems = [
   },
   {
     id: 11,
-    icon: <img src={StoreIcon} alt="store" className="h-6 w-10 mt-4 mb-4" />,
+    icon: (
+      <img src={StoreIcon} alt="store" className="h-6 w-10 mt-4 mb-4" />
+    ),
     activeIcon: (
-      <img src={SettingIcon} alt="active store" className="h-6 w-10 mt-4 mb-4" />
+      <img
+        src={SettingIcon}
+        alt="active store"
+        className="h-6 w-10 mt-4 mb-4"
+      />
     ),
     text: "Store Settings",
+    link: "/store-settings/info", // You can set a default link or remove it
     className: "flex items-center gap-2",
     dropdownItems: [
-      // { id: 61, text: "Submenu 1", link: "/store-settings/submenu1" },
-      // { id: 62, text: "Submenu 2", link: "/store-settings/submenu2" },
+      { id: 61, text: "Info", link: "/store-settings/info" },
+      { id: 62, text: "Setup", link: "/store-settings/setup" },
+      { id: 63, text: "Options", link: "/store-settings/option" },
+      { id: 64, text: "Alters", link: "/store-settings/alters" },
+      { id: 65, text: "Taxes", link: "/store-settings/taxes" },
+      { id: 66, text: "Add Employee", link: "/store-settings/add-employee" },
+      { id: 67, text: "Receipt", link: "/store-settings/receipt" },
+      { id: 68, text: "Inventory", link: "/store-settings/inventory" },
+      { id: 69, text: "Register", link: "/store-settings/register" },
+      { id: 70, text: "Quick Add", link: "/store-settings/quick-add" },
+      { id: 71, text: "System Access", link: "/store-settings/system-access" },
     ],
   },
+  
   {
     id: 12,
-    icon: <img src={ReportIcon} alt="Report" className="h-6 w-10 mt- mb-4" />,
+    icon: (
+      <img src={ReportIcon} alt="store" className="h-6 w-10 mt-4 mb-4" />
+    ),
     activeIcon: (
       <img
         src={ResportIcons}
         alt="active report"
-        className="h-6 w-10 mt- mb-4"
+        className="h-6 w-10 mt-4 mb-4"
       />
     ),
     text: "Reporting",
+    link: "/reporting", // You can set a default link or remove it
     className: "flex items-center gap-2",
-    dropdownItems: [
-      // { id: 61, text: "Submenu 1", link: "/reporting/submenu1" },
-      // { id: 62, text: "Submenu 2", link: "/reporting/submenu2" },
-    ],
+  dropdownItems: [
+
+    { id: 61, text: "Sales Report", link: "/store-settings/sales-report" },
+    { id: 62, text: "Daily Total Report", link: "/store-settings/daily-total-report" },
+    { id: 63, text: "Detailed Category Sale", link: "/store-settings/Details-category" },
+    { id: 64, text: "Report by Sales Person", link: "/store-settings/report-sales-person" },
+    { id: 65, text: "Check ID verification", link: "/store-settings/id-verification" },
+    { id: 66, text: "Vendor Sales Report", link: "/store-settings/vendors-sales-reports" },
+    { id: 67, text: "Credit Debit Sales Report", link: "/store-settings/credit-debit-sales" },
+    { id: 68, text: "Instant PO Activity Report", link: "/store-settings/instant-activity" },
+    { id: 69, text: "Top Seller - Overall Top 10", link: "/store-settings/overall-top" },
+    { id: 70, text: "Flash Report", link: "/store-settings/flash-resigter" },
+    { id: 71, text: "Vendor List", link: "/store-settings/vendors-list" },
+    { id: 72, text: "Employee List", link: "/store-settings/employee-list" },
+    { id: 73, text: "New Item Created Between", link: "/store-settings/item-create-between" },
+    { id: 74, text: "Reorder Inventory", link: "/store-settings/recorder-inventory" },
+    { id: 75, text: "Shift Summary", link: "/store-settings/shift-summary" },
+  ]
   },
+  
+
+
 ];
 
 export default SideMenu;

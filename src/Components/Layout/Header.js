@@ -70,9 +70,9 @@ export default function Header({ isMenuOpen, setIsMenuOpen }) {
           {/* Your dropdown content goes here */}
           <div className="p-4">
             {/* Dropdown items */}
-            <div>Category 1</div>
+            {/* <div>Category 1</div>
             <div>Category 2</div>
-            <div>Category 3</div>
+            <div>Category 3</div> */}
             {/* Add more items as needed */}
           </div>
         </div>

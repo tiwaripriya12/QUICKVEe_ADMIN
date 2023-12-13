@@ -83,25 +83,20 @@ const CategoryDataSort = ({ isOpen, onClose }) => {
     <>
       <div className="mx-2 my-7">
         <div
-          className="box-content h-[100] p-2 border-4 border-white bg-white rounded-2xl opacity-100 relative mx-8 my-9"
-          style={{
-            boxShadow: "0px 3px 6px #0000001F",
-            overflowX: "auto",
-            whiteSpace: "nowrap",
-          }}
+          className="box-content h-[100] p-4 border-4 border-white bg-white rounded-lg shadow-md opacity-100 relative mt-9 mx-8"
         >
           <div>
             <div className="flex justify-between gap-2 mx-6 my-6">
-              <div className="text-[18px] Admin_std leading-0 text-black admin_medium font-semibold opacity-100">
+              <div className="text-[20px] font-normal opacity-100 text-black ml-4 admin_medium">
                 Category
               </div>
               <div>
                 <Link
                   to="/addCategory"
-                  className="text-[18px] Admin_std leading-0 text-blue-500 admin_medium font-semibold opacity-100"
+                  className="text-[20px] font-normal opacity-100 text-blue-500 ml-4 admin_medium"
                 >
                   Add Category
-                  <span className="text-[18px] text-blue-500"> + </span>
+                  <span className="text-[20px] text-blue-500"> + </span>
                 </Link>
               </div>
             </div>
@@ -109,7 +104,7 @@ const CategoryDataSort = ({ isOpen, onClose }) => {
 
           <table className="w-full">
             <thead>
-              <tr className="bg-black text-[white] adminstdbook">
+              <tr className="bg-[#253338] text-[white] adminstdbook">
                 <th className="p-4 text-left ">Sort</th>
                 <th className="p-4 text-left">Title</th>
                 <th className="p-4 text-left">Items</th>
@@ -122,13 +117,13 @@ const CategoryDataSort = ({ isOpen, onClose }) => {
               {items.map((item) => (
                 <tr
                   key={item.id}
-                  className="bg-white admin_medium text-[#000000] text-[16px]"
+                  className="bg-white admin_medium text-[#000000] text-[18px]"
                 >
                   <td className="p-4">{item.id}</td>
                   <td className="p-4">{item.title}</td>
                   <td className="p-4">
                     <button
-                      className="text-[#0A64F9]"
+                      className="text-[#0A64F9] underline"
                       onClick={() => openModal(item.items)}
                     >
                       View Items
@@ -160,7 +155,7 @@ const CategoryDataSort = ({ isOpen, onClose }) => {
                   </td>
                   <td className="p-4">
                     <button onClick={() => handleDelete(item.id)}>
-                      <img
+                      <img 
                         src={DeleteIcon}
                         alt="delete"
                         className="h-6 w-6 mt-4 mb-4 text-2xl"

@@ -38,8 +38,8 @@ const DateRange = () => {
 
   return (
     <>
-      <div className="ml-[-4.2rem] mr-[-4.2rem] my-2">
-        <div className="bg-white px-8 py-4 mt-4 mx-10 shadow-md rounded-lg opacity-100 lg:h-[230px] sm:h[500px] md:h-[450px]">
+      <div className="main_blocks">
+        <div className="bg-white px-8 py-8 mt-4 mx-10 shadow-md rounded-lg opacity-100 h-auto">
           <div className="flex flex-col sm:flex-row mb-9">
             <div className="sm:w-full">
               <h3 className="text-black text-[18px] font-semibold leading-none mt-2">
@@ -47,7 +47,7 @@ const DateRange = () => {
               </h3>
             </div>
             <div className="w-full mt-4 sm:mt-0 sm:w-full">
-              <div className="flex flex-row text-gray-600 space-x-4 py-2 bg-[#F5F5F5] rounded ml-28 lg:text-[18px] Admin_std sm:text-xs md:text-sm">
+              <div className="flex flex-row text-gray-600 space-x-4 py-2 bg-[#F5F5F5] rounded ml-28 lg:text-[18px] Admin_std sm:text-[18px] md:text-[16px">
                 {["Today", "Yesterday", "Last 7 Days", "Last 30 days"].map(
                   (option) => (
                     <div
@@ -70,7 +70,7 @@ const DateRange = () => {
             {/* Start Date */}
             <div className="relative">
               <div className="mb-2 text-[#818181]  Admin_std">Start Date</div>
-              <div className="w-full">
+              <div className="lg:w-full sm:w-full md:h-full">
                 <DatePicker
                   selected={startDate}
                   onChange={(date) => setStartDate(date)}
@@ -82,7 +82,7 @@ const DateRange = () => {
                   timeIntervals={15}
                   timeCaption="Time"
                   dateFormat="MMMM d, yyyy h:mm aa"
-                  className="border border-blue-500 rounded px-3 py-2 pr-10 mt-1 focus:outline-none focus:border-blue-500 w-[350px]  Admin_std"
+                  className="border rounded px-3 py-2 pr-10 mt-1 focus:outline-none focus:border-blue-500 w-[350px]  Admin_std"
                   ref={startDateRef}
                 />
                 <span
@@ -109,16 +109,19 @@ const DateRange = () => {
                 timeIntervals={15}
                 timeCaption="Time"
                 dateFormat="MMMM d, yyyy h:mm aa"
-                className="border border-blue-500 rounded px-3 py-2 pr-10 mt-1 focus:outline-none focus:border-blue-500 w-[350px]  Admin_std"
+                className="border rounded px-3 py-2 pr-10 mt-1 focus:outline-none focus:border-blue-500 w-[350px]  Admin_std"
                 ref={endDateRef}
               />
               <span
                 className="absolute right-3 top-14 transform -translate-y-1/2 text-gray-400 cursor-pointer"
                 onClick={handleEndDateIconClick}
               >
-                <FiCalendar className="text-black mr-32" />
+                <FiCalendar className="text-black " />
               </span>
-              <span>
+           
+             
+            </div>
+            <span className="search_btn">
               <button
                 onClick={handleSearch}
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline self-start mt-6 sm:mt-0 ml-6"
@@ -126,8 +129,6 @@ const DateRange = () => {
                 Search
               </button>
               </span>
-             
-            </div>
 
             {/* Search Button */}
           </div>

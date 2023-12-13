@@ -5,6 +5,7 @@ import DateRange from "./DateRange";
 //import { ContentCopy } from "@mui/icons-material";
 import ContentList from "./ContentList";
 import TableViewData from "./TableViewData";
+import MainOnline from "../OnlineOrder/MainOnline";
 
 const MainInStore = () => {
   const [activeTab, setActiveTab] = useState("online");
@@ -17,7 +18,7 @@ const MainInStore = () => {
     if (activeTab === "online") {
       return (
       <>
-            <FilterEmp />
+            <MainOnline />
        
           <div className="mt-16 w-full">
             </div>
@@ -57,7 +58,7 @@ const MainInStore = () => {
 
   return (
     <>
-    <div className="mx-8 my-2">
+    <div className="mx-6 my-2">
       <div
         className="bg-white px-8 py-4 mt-4 mx-10 shadow-md rounded-lg opacity-100 lg:h-[350px] sm:h[500px] md:h-[450px]"
       >

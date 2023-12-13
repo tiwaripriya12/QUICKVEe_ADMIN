@@ -103,11 +103,11 @@ const PurchaseTable = () => {
       <div className="box-content h-[600px] w-70 p-4 border-4 border-white bg-white rounded-xl opacity-100 my-9 mx-8">
         <div>
           <div className="flex justify-between gap-2 mx-6 my-6">
-            <div className="text-[18px] Admin_std leading-0 text-black admin_medium font-semibold opacity-100">
+            <div className="text-[20px] font-normal opacity-100 text-black ml-4 admin_medium">
               Purchase Order
             </div>
             <div>
-              <div className="text-[18px] Admin_std leading-0 text-blue-500 admin_medium font-semibold opacity-100">
+              <div className="text-[20px] admin_medium font-normal leading-0 text-blue-500 opacity-100">
                 <Link to="/addpurchaseOrder">
                   Add New PO
                   <button className="text-[18px] text-blue-500 ml-1 focus:outline-none">
@@ -121,7 +121,7 @@ const PurchaseTable = () => {
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white">
             <thead>
-              <tr className="bg-black text-white">
+              <tr className="bg-[#253338] text-white">
                 <th className="py-4 px-2">Order</th>
                 <th className="py-4 px-2">Status</th>
                 <th className="py-4 px-2">Received</th>
@@ -142,18 +142,18 @@ const PurchaseTable = () => {
                   }
                 >
                   <td className="py-2 px-8">{purchase.order}</td>
-                  <td className={`py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal ${getStatusColor(purchase.status)}`}>
+                  <td className={`py-2 px-8 text-[18px] text-[131313] leading-3 opacity-100 admin_medium font-normal ${getStatusColor(purchase.status)}`}>
                     {purchase.status}
                   </td>
                   <td className="py-2 px-8 flex items-center">
                     {getReceivedIcon(purchase.received)}
                   </td>
-                  <td className="py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{purchase.totalQty}</td>
-                  <td className="py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{purchase.vendorName}</td>
-                  <td className="py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{`$${purchase.totalCost}`}</td>
-                  <td className="py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{`$${purchase.due}`}</td>
-                  <td className="py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{purchase.lastUpdate}</td>
-                  <td className="py-2 px-8 text-[16px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{purchase.receivedAt}</td>
+                  <td className="py-2 px-8 text-[18px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{purchase.totalQty}</td>
+                  <td className="py-2 px-8 text-[18px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{purchase.vendorName}</td>
+                  <td className="py-2 px-8 text-[18px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{`$${purchase.totalCost}`}</td>
+                  <td className="py-2 px-8 text-[18px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{`$${purchase.due}`}</td>
+                  <td className="py-2 px-8 text-[18px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{purchase.lastUpdate}</td>
+                  <td className="py-2 px-8 text-[18px] text-[131313] leading-3 opacity-100 admin_medium font-normal">{purchase.receivedAt}</td>
                 </tr>
               ))}
             </tbody>

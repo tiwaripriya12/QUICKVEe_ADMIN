@@ -217,7 +217,7 @@ const TableViewData = () => {
 
   return (
     <>
-      <div className="ml-[-4.3rem] mr-[-4.3rem] my-2">
+      <div className="main_blocks">
         <div className="bg-white px-8 py-4 mt-4 mx-10 shadow-md rounded-lg opacity-100 h-auto">
 
         <Pagination
@@ -234,7 +234,7 @@ const TableViewData = () => {
 />
      
           <table className="w-full">
-            <thead className="bg-[#253338] text-[#FFFFFF] w-full">
+          <thead className="bg-[#253338] text-[#FFFFFF] w-full opacity-100 mx-[-10px]">
               <tr className="border-b">
                 <th className="py-3 px-6 text-left Admin_std">Customer</th>
                 <th className="py-3 px-6 text-left Admin_std">Order</th>

@@ -5,7 +5,7 @@ import ProductTable from './ProductTable'
 
 const MainProducts = () => {
   return ( <>
-<FilterProduct />
+{/* <FilterProduct /> */}
 <ProductContent />
 <ProductTable />
 
